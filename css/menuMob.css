@@ -1,0 +1,21 @@
+nav{
+    width: 100%;
+}
+    nav ul{
+        display: flex;
+        justify-content: center;
+    }
+
+        nav ul li{
+            background-color: yellow;
+        }
+        nav ul li:not(:last-of-type){
+            margin-right: 1rem;
+        }
+
+            nav ul li a{
+                color: white;
+                display: block;
+                padding: 1rem 2rem;
+                text-decoration: none;
+            }
