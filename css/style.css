@@ -2,3 +2,13 @@
 
 @import "../../node_modules/font-awesome/css/font-awesome.min.css";
 @import "./reset.css";
+
+/*CSS para móvil*/
+@media screen and (max-width:350px){
+
+}
+
+/*CSS para ordenador*/
+@media screen and (min-width:350px){
+
+}
