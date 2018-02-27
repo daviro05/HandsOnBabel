@@ -5,10 +5,44 @@
 
 /*CSS para móvil*/
 @media screen and (max-width:350px){
-
+    
+    img{
+        width: 200px;
+    }
 }
 
 /*CSS para ordenador*/
 @media screen and (min-width:350px){
 
+    img{
+        width: 100px;
+    }
+
+    figure{
+        float:left;
+        width: 25%;
+    }
+
+    article{
+        border: 1px solid black;
+        overflow: hidden;
+    }
+
+    article,p{
+        margin-top: 1rem;
+    }
+
+    article p{
+        float: left;
+        width: 70%;
+        border: 1px solid black;
+    }
+
 }
+
+footer {
+    background-color: black;
+    bottom: 0;
+    color: white;
+    width: 100%;
+  }
