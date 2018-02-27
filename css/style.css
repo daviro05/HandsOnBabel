@@ -15,7 +15,7 @@
 @media screen and (min-width:350px){
 
     img{
-        width: 100px;
+        width: 150px;
     }
 
     figure{
@@ -23,24 +23,42 @@
         width: 25%;
     }
 
-    article{
-        border: 1px solid black;
-        overflow: hidden;
-    }
-
-    article,p{
-        margin-top: 1rem;
-    }
-
     article p{
         float: left;
         width: 70%;
-        border: 1px solid black;
+        margin-left: 1rem;
     }
 
 }
 
+/* Común para todos los dispositivos */
+
+article{
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1rem;
+    text-align: center;
+}
+
+p{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+article,p{
+    margin-top: 1rem;
+}
+
+figcaption{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 0.2rem;
+}
+
 footer {
+    text-align: center;
     background-color: black;
     bottom: 0;
     color: white;
