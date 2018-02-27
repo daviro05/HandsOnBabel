@@ -2,12 +2,19 @@ nav{
     width: 100%;
 }
     nav ul{
-        display: flex;
+        display: none;
         justify-content: center;
+        z-index: 1000;
+        box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+        width: 50%;
+        margin-top: 1rem;
+        float:left;
+        position:absolute;
     }
 
         nav ul li{
-            background-color: yellow;
+            background-color: black;
+            width: 100%;
         }
         nav ul li:not(:last-of-type){
             margin-right: 1rem;
@@ -19,3 +26,9 @@ nav{
                 padding: 1rem 2rem;
                 text-decoration: none;
             }
+nav>span{
+    margin-left: 1rem;
+    color: white;
+    background-color: orange;
+    padding: 0.5rem;
+}

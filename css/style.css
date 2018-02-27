@@ -3,10 +3,14 @@
 @import "../../node_modules/font-awesome/css/font-awesome.min.css";
 @import "./reset.css";
 @import "./header.css";
-@import "./menu.css";
+@import url("./menuPC.css") screen and (min-width:580px);
+@import url("./menuMob.css") screen and (max-width:580px);
 
 /*CSS para móvil*/
-@media screen and (max-width:350px){
+@media screen and (max-width:580px){
+    .menuPC{
+        display:none;
+    }
     
     img{
         width: 200px;
@@ -14,7 +18,11 @@
 }
 
 /*CSS para ordenador*/
-@media screen and (min-width:350px){
+@media screen and (min-width:580px){
+
+    .menuMob{
+        display:none;
+    }
 
     main{
         width: 100%;
