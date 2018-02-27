@@ -1,7 +1,4 @@
 /* CSS General */
 
-*, 
-*::before, *::after, 
-*:before, *:after { 
-    box-sizing : border-box;
-}
+@import "../../node_modules/font-awesome/css/font-awesome.min.css";
+@import "./reset.css";
