@@ -16,6 +16,19 @@
 /*CSS para ordenador*/
 @media screen and (min-width:350px){
 
+    main{
+        width: 100%;
+    }
+
+    section{
+        width: 50%;
+        margin: auto;
+        background-image: url("../assets/muestra2.png");
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-color: #FFD08C;
+    }
+
     img{
         width: 150px;
     }
