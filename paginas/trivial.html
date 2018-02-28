@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/trivial.css">
         <script src="../app/app.js" type="module"></script>
         <script src="../app/trivial.js"></script>
         <title>DCGames - Trivial</title>
@@ -47,12 +48,17 @@
         </nav>
         <!-- Contenido principal -->
         <main>
-        <!-- Adivinar personajes -->
         <section>
                 <article>
-                        <div id="pregunta">Preguntas</div>
-                        <div id="respuestas">Respuestas</div>
-                        <input type="button" value="Comprobar" onclick="comprobar()">
+                        
+                </article>
+        </section>
+        <section class="sec_trivial">
+                <article>
+                        <div id="pregunta"></div>
+                        <div id="respuestas"></div>
+                        <div id="puntuacion"><p>Puntuación</p><span class="puntos">0</span> puntos</div>
+                        <div id="btn_comprobar"><input type="button" id="comprobar" value="Comprobar"></div>
                 </article>
         </section>
         </main>

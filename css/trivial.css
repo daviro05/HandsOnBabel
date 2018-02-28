@@ -1,0 +1,42 @@
+.sec_trivial{
+
+    background-color: bisque;
+}
+
+.sec_trivial p{
+    width: 100%;
+    margin: auto;
+    font-weight: bold;
+}
+
+.resp{
+    text-align: left;
+    height: 100px;
+    margin-top:20px;
+}
+
+.resp span{
+    display: block;
+    padding: 0.2rem;
+}
+
+#respuestas{
+    width: 50%;
+    float: left;
+}
+
+#puntuacion{
+    float: left;
+    width: 50%;
+    height: 100px;
+    margin-top:20px;
+}
+
+#puntuacion, .resp{
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#btn_comprobar{
+    margin-top: 25%;
+}
