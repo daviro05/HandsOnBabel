@@ -27,8 +27,10 @@ export class Main {
     desplegarFormSug() {
         if (!this.vista.eFormSugC.style.display || this.vista.eFormSugC.style.display==='none') {
             this.vista.eFormSugC.style.display = 'block';
+            this.vista.eBtnSug.innerHTML=`<span class="fa fa-arrow-up"></span>Sugerencias<span class="fa fa-arrow-up"></span>`;
         } else {
             this.vista.eFormSugC.style.display = 'none';
+            this.vista.eBtnSug.innerHTML=`<span class="fa fa-arrow-down"></span>Sugerencias<span class="fa fa-arrow-down"></span>`;
         }
     }
 

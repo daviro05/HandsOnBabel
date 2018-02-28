@@ -16,22 +16,22 @@
             <i class="fa fa-gamepad"></i>Babel Games</h1>
     </header>
     <!--  Menu principal -->
-        <nav class="menuPC">
+    <nav class="menuPC">
         <ul>
             <li>
-                <a id ='index' href="./index.html">Home</a>
+                <a id='index' href="./index.html">Home</a>
             </li>
             <li>
-                    <a id ='trivial' href="./paginas/trivial.html">Trivial</a>
+                <a id='trivial' href="./paginas/trivial.html">Trivial</a>
             </li>
             <li>
-                    <a id ='personajes' href="./paginas/caras.html">Personajes</a>
+                <a id='personajes' href="./paginas/caras.html">Personajes</a>
             </li>
             <li>
-                    <a id ='parejas' href="./paginas/parejas.html">Parejas</a>
+                <a id='parejas' href="./paginas/parejas.html">Parejas</a>
             </li>
             <li>
-                <a id ='about' href="./about.html">About</a>
+                <a id='about' href="./about.html">About</a>
             </li>
         </ul>
     </nav>
@@ -39,19 +39,19 @@
         <span id="menuBtn" class="fa fa-bars"></span>
         <ul>
             <li>
-                <a id ='index' href="./index.html">Home</a>
+                <a id='index' href="./index.html">Home</a>
             </li>
             <li>
-                    <a id ='trivial' href="./paginas/trivial.html">Trivial</a>
+                <a id='trivial' href="./paginas/trivial.html">Trivial</a>
             </li>
             <li>
-                    <a id ='personajes' href="./paginas/caras.html">Personajes</a>
+                <a id='personajes' href="./paginas/caras.html">Personajes</a>
             </li>
             <li>
-                    <a id ='parejas' href="./paginas/parejas.html">Parejas</a>
+                <a id='parejas' href="./paginas/parejas.html">Parejas</a>
             </li>
             <li>
-                <a id ='about' href="./about.html">About</a>
+                <a id='about' href="./about.html">About</a>
             </li>
         </ul>
     </nav>
@@ -82,10 +82,10 @@
             </article>
         </section>
         <section>
-            <button id="btnSug" type="button">Sugerencias</button>
+            <button id="btnSug" class="btnSug" type="button"><span class="fa fa-arrow-down"></span>Sugerencias<span class="fa fa-arrow-down"></span></button>
         </section>
-        <section id="formSugC">
-            <form id="formSug" method="POST"novalidate>
+        <section id="formSugC" class="formSugC">
+            <form id="formSug" method="POST" novalidate>
                 <p>
                     <label>Nombre
                         <input id="nombre" name="nombre" type="text">
@@ -96,29 +96,26 @@
                         <input id="correo" name="correo" type="email">
                     </label>
                 </p>
-                <fieldset>
-                    <legend>Gustos</legend>
-                    <p>¿Qué juego te ha gustado más?</p>
-                    <ul>
-                        <li>
-                            <label>Caras
-                                <input type="checkbox" name="caras" id="caras">
-                            </label>
-                        </li>
-                        <li>
-                            <label>Trivial
-                                <input type="checkbox" name="trivial" id="trivial">
-                            </label>
-                        </li>
-                        <li>
-                            <label>Parejas
-                                <input type="checkbox" name="parejas" id="parejas">
-                            </label>
-                        </li>
-                    </ul>
-                </fieldset>
-                <button type="submit">Enviar</button>
-                <button type="reset">Limpiar</button>
+                <p>¿Qué juego te ha gustado más?</p>
+                <ul>
+                    <li>
+                        <label>Caras
+                            <input type="checkbox" name="caras" id="caras">
+                        </label>
+                    </li>
+                    <li>
+                        <label>Trivial
+                            <input type="checkbox" name="trivial" id="trivial">
+                        </label>
+                    </li>
+                    <li>
+                        <label>Parejas
+                            <input type="checkbox" name="parejas" id="parejas">
+                        </label>
+                    </li>
+                </ul>
+                <button class="btnForm" type="submit">Enviar</button>
+                <button class="btnForm" type="reset">Limpiar</button>
             </form>
         </section>
     </main>
