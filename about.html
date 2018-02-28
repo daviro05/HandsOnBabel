@@ -90,12 +90,12 @@
             <form id="formSug" method="POST" novalidate>
                 <p>
                     <label>Nombre
-                        <input id="nombre" name="nombre" type="text">
+                        <input id="nombre" name="nombre" type="text" required>
                     </label>
                 </p>
                 <p>
                     <label>Correo
-                        <input id="correo" name="correo" type="email">
+                        <input id="correo" name="correo" type="email" required>
                     </label>
                 </p>
                 <p>¿Qué juego te ha gustado más?</p>
@@ -116,6 +116,8 @@
                         </label>
                     </li>
                 </ul>
+                <p>Sugerencia</p>
+                <textarea name="sugerencia" id="sugerencia" class="iSug"></textarea>
                 <button class="btnForm" type="submit">Enviar</button>
                 <button class="btnForm" type="reset">Limpiar</button>
             </form>

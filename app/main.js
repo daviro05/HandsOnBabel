@@ -8,6 +8,7 @@ export class Main {
             eFormSugC: document.querySelector('#formSugC'),
             eNameForm: document.querySelector('#nombre'),
             eMailForm: document.querySelector('#correo'),
+            eSugForm: document.querySelector('#sugerencia'),
             ePrefForm: document.querySelectorAll('#formSug input[type="checkbox"]'),
             oPrefForm: [],
         }
@@ -45,6 +46,7 @@ export class Main {
         });
         let pref = JSON.stringify(this.vista.oPrefForm);
         localStorage.setItem('preferencias', pref);
+        localStorage.setItem('sugerencia', this.vista.eSugForm.value);
         document.location.href="resultados.html";
     }
 
