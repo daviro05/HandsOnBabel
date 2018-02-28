@@ -2,7 +2,7 @@ export class Main {
     constructor() {
         console.log("Main loaded")
         this.vista = {
-            aBtnsMenu: document.querySelectorAll('a'),
+            aBtnsMenu: document.querySelectorAll('nav a'),
             eMain : document.querySelector('main'), 
             aImports: document.querySelectorAll('link[rel="import"]'),
             oImports: {}
@@ -17,7 +17,7 @@ export class Main {
             this.vista.oImports[elem.title]=elem.import
         })
         console.log(this.vista.oImports)
-        this._cargarTemplate('trivial')
+        //this._cargarTemplate('trivial')
     }
 
     menuItems(oEv) {
@@ -25,6 +25,7 @@ export class Main {
         console.log(`Pulsado ${oEv.target.id}`)
         if (!this.vista.oImports[oEv.target.id]) {
             // Si no existe template
+            document.location.href=`./${oEv.target.id}.html`;
         } else {
             this._cargarTemplate(oEv.target.id )
         }
