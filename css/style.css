@@ -31,10 +31,8 @@
     section{
         width: 50%;
         margin: auto;
-        background-image: url("../assets/muestra2.png");
-        background-repeat: no-repeat;
-        background-size: 100% 100%;
-        background-color: #FFD08C;
+        z-index: 2;
+
     }
 
     img{
@@ -50,6 +48,16 @@
         float: left;
         width: 70%;
         margin-left: 1rem;
+    }
+
+    .secciones{
+        margin: auto;
+        background-image: url("../assets/muestra2.png");
+        background-repeat: no-repeat;
+        background-size: 50% 100%;
+        /*background-color: tan;*/
+        background-position: center;
+        position: relative;
     }
 
 }
