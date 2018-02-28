@@ -22,6 +22,7 @@
         function jugar(){
         
             var aleatorio = Math.floor(Math.random()*preguntas.length);
+            console.log(aleatorio);
             var respuestas_posibles = respuestas[aleatorio];
             
             
@@ -31,7 +32,8 @@
             var leida = false;
             for(i in respuestas_posibles){
                 var posicion_aleatoria = Math.floor(Math.random()*posiciones.length);
-                if(posicion_aleatoria==0 && leida == false){
+
+                if(posicion_aleatoria == 0 && leida == false){
                     correcta = i;
                     leida = true;
                 }
@@ -45,13 +47,12 @@
                 txt_respuestas += '<span><input type="radio" name="res" id="respuesta'+num+'" value="'+i+'"><label for="respuesta'+num+'">'+respuestas_reordenadas[i]+'</label></span>';
                 num++;
             }
-            
-            document.querySelector("#respuestas").innerHTML = "<div class='resp'>"+txt_respuestas+"</div>";
-            document.querySelector("#pregunta").innerHTML = "<p>"+preguntas[aleatorio]+"</p>";
-            
+                document.querySelector("#respuestas").innerHTML = "<div class='resp'>"+txt_respuestas+"</div>";
+                document.querySelector("#pregunta").innerHTML = "<p>"+preguntas[aleatorio]+"</p>";
             }
             
             function comprobar(){
+
                 var respuesta = document.querySelector("input[type=radio]:checked").value;
                 var puntuacion = document.querySelector(".puntos");
             
