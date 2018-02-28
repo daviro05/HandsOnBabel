@@ -1,12 +1,14 @@
-.sec_trivial{
-
-    background-color: bisque;
-}
 
 .sec_trivial p{
     width: 100%;
     margin: auto;
     font-weight: bold;
+}
+
+.sec_trivial article{
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: blanchedalmond;
 }
 
 .resp{
