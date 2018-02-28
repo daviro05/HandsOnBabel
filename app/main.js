@@ -12,8 +12,8 @@ export class Main {
             oPrefForm: [],
         }
         this.vista.eBtnMenuMob.addEventListener('click', this.desplegarMenu.bind(this), false);
-        this.vista.eBtnSug.addEventListener('click', this.desplegarFormSug.bind(this), false);
-        this.vista.eformSug ? this.vista.eformSug.addEventListener('submit', this.manejarForm.bind(this), false): null;
+        this.vista.eBtnSug ? this.vista.eBtnSug.addEventListener('click', this.desplegarFormSug.bind(this), false) : null;
+        this.vista.eFormSug ? this.vista.eFormSug.addEventListener('submit', this.manejarForm.bind(this), false) : null;
     }
 
     desplegarMenu() {
