@@ -1,17 +1,21 @@
-let preguntas = [
-    " ",
-    " ",
-    " "
+(function (){
+    let preguntas = [
+        " ",
+        " ",
+        " "
+    
+    ];
+    let respuestas = [
+    [" ", " ", " ", " "],
+    [" ", " ", " ", " "],
+    [" ", " ", " ", " "]
+    
+    ];
+    
+    var correcta;
+    document.addEventListener("DOMContentLoaded",jugar,false);
+    })();
 
-];
-let respuestas = [
-[" ", " ", " ", " "],
-[" ", " ", " ", " "],
-[" ", " ", " ", " "]
-
-];
-
-var correcta;
 
 function jugar(){
 var aleatorio = Math.floor(Math.random()*preguntas.length);
