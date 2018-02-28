@@ -31,8 +31,9 @@
     section{
         width: 50%;
         margin: auto;
-        z-index: 2;
-
+        background-color: white;
+        margin-bottom: 2%;
+        max-height: 210px;
     }
 
     img{
@@ -52,19 +53,28 @@
 
     .secciones{
         margin: auto;
-        background-image: url("../assets/muestra1.png");
+        background-image: url(../assets/muestra3.png);
         background-repeat: no-repeat;
-        background-size: 50% 100%;
-        /*background-color: tan;*/
+        background-size: 100% 100%;
         background-position: center;
+        width: 50%;
+        min-height: 220px;
+        position: absolute;
+        margin-left: 25%;
     }
 
 }
 
 /* Común para todos los dispositivos */
 
+body{
+    background: #f99b2f; /* Old browsers */
+   
+
+}
+
 article{
-    border: 1px solid black;
+    
     border-radius: 10px;
     overflow: hidden;
     padding: 1rem;
