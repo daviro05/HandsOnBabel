@@ -1,0 +1,20 @@
+.sec_personajes{
+    display: flex;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+.sec_personajes img, .sec_personajes input{
+    width: 50%;
+}
+
+.sec_personajes figure{
+    margin-bottom: 1rem;
+}
+
+.correcto{
+    border:2px solid green;
+}
+
+.incorrecto{
+    border:2px solid red;
+}
