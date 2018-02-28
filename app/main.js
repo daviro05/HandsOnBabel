@@ -31,6 +31,7 @@ export class Main {
         }
     }
 
+    
     _cargarTemplate (id) {
         // Se selecciona el import adecuado segun su nombre (title)
         const IMPORT = this.vista.oImports[id]
