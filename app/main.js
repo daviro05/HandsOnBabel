@@ -10,11 +10,14 @@ export class Main {
             eMailForm: document.querySelector('#correo'),
             eSugForm: document.querySelector('#sugerencia'),
             ePrefForm: document.querySelectorAll('#formSug input[type="checkbox"]'),
+            eBtnPanel: document.querySelector(".aside_visible"),
+            ePanel:  document.querySelector(".aside_oculto"),
             oPrefForm: [],
         }
         this.vista.eBtnMenuMob.addEventListener('click', this.desplegarMenu.bind(this), false);
         this.vista.eBtnSug ? this.vista.eBtnSug.addEventListener('click', this.desplegarFormSug.bind(this), false) : null;
         this.vista.eFormSug ? this.vista.eFormSug.addEventListener('submit', this.manejarForm.bind(this), false) : null;
+        this.vista.eBtnPanel ? this.vista.eBtnPanel.addEventListener('click',this.desplegarPanel.bind(this),false) : null;
     }
 
     desplegarMenu() {
@@ -49,5 +52,14 @@ export class Main {
         localStorage.setItem('sugerencia', this.vista.eSugForm.value);
         document.location.href="resultados.html";
     }
+
+    desplegarPanel(){
+        if(this.vista.ePanel.style.display == "none")
+            this.vista.ePanel.style.display = "block";
+        else
+             this.vista.ePanel.style.display = "none";
+    }
+
+    
 
 }

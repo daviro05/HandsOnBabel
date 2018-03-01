@@ -27,6 +27,10 @@
     section.sec_parejas{
         width:100%;
     }
+
+    .aside_oculto{
+        display: none;
+    }
 }
 
 /*CSS para ordenador*/
@@ -95,30 +99,38 @@
     }
 
     .aside_principal{
-        border: 1px solid black;
+        width: 20%;
+        height: 300px;
+        float: left;
+        margin-left: 2%;
+        text-align: center;
+       
+        margin-top: -2%;
+        z-index: -1;
+    }
+
+    .aside_oculto{
+        display:none;
         width: 20%;
         height: 300px;
         float: left;
         margin-left: 2%;
         text-align: center;
         position: fixed;
-        background-color: white;
-        z-index: -1;
-        margin-top: -2%;
-        
+        margin-top: 4%;
+        background-image: url("../assets/sabiasque.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
     }
 
-    .aside_fondo{
-
-        width: 20%;
-        height: 300px;
-        float: left;
-        margin-left: 2%;
+    .aside_visible{
+        cursor: pointer;
+        margin-left: 9%;
         text-align: center;
-        background-color: #f99b2f;
-        margin-top: -2%;
-
-        
+        position: fixed;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 0.2rem;
     }
 
 }
