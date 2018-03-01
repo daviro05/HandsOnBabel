@@ -1,0 +1,24 @@
+.sec_parejas{
+    width: 50%;
+    margin:auto;
+    margin-top:1rem;
+}
+    .sec_parejas table{
+        width: 100%;
+    }
+
+    .sec_parejas tr {
+        height: 120px;
+    }
+
+    .sec_parejas td {
+        margin: 0rem;
+        height: 0px;
+    }
+
+    .sec_parejas .btnPairs {
+        width: 100%;
+        height: 100%;
+        background-image: url( '../assets/game.png' );
+        background-size: 100% 100%;
+    }
