@@ -22,23 +22,22 @@
     padding: 0.2rem;
 }
 
-#respuestas{
+.respuestas{
     width: 50%;
     float: left;
 }
 
-#puntuacion{
+.puntuacion{
     float: left;
     width: 50%;
     height: 100px;
     margin-top:20px;
 }
 
-#puntuacion, .resp{
-    border: 1px solid black;
+.puntuacion, .resp{
     border-radius: 10px;
 }
 
-#btn_comprobar{
+.btn_comprobar{
     margin-top: 25%;
 }

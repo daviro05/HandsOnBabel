@@ -23,6 +23,10 @@
     .sec_personajes img, .sec_personajes input{
         width: 100%;
     }
+
+    section.sec_parejas{
+        width:100%;
+    }
 }
 
 /*CSS para ordenador*/
@@ -140,6 +144,7 @@ footer {
     font-size: 1.5rem;
     border: 1px solid white;
     font-family: 'Permanent Marker', cursive;
+    cursor: pointer;
 }
 
 .formResC{
@@ -186,6 +191,7 @@ footer {
         background-color: black;
         color: white;
         font-family: 'Permanent Marker', cursive;
+        cursor: pointer;
     }
 
     .white{
