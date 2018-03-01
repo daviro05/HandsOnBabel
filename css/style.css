@@ -50,6 +50,9 @@
 
     .imgPC img{
         width: 150px;
+        height: 150px;
+        border: 1px solid black;
+        border-radius: 100px;
     }
 
     figure.imgPC{
@@ -205,11 +208,10 @@ footer {
 }
 
 
-
-    .sec_personajes div {
-        width: 45%;
-        margin:auto;
-        float:none;
-        text-align:center;
-    }
+.sec_personajes div {
+    width: 45%;
+    margin:auto;
+    float:none;
+    text-align:center;
+}
 
