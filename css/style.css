@@ -1,6 +1,7 @@
 /* CSS General */
 
 @import "../../node_modules/font-awesome/css/font-awesome.min.css";
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import "./reset.css";
 @import "./header.css";
 @import url("./menuPC.css") screen and (min-width:580px);
@@ -217,5 +218,9 @@ footer {
     margin:auto;
     float:none;
     text-align:center;
+}
+
+.desc{
+    font-family: 'Indie Flower', cursive;
 }
 
