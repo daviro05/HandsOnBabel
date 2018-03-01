@@ -13,17 +13,23 @@
         }
 
         let parejasRell = [
-            ["homer",0],
-            ["bart",0],
-            ["lisa",0],
-            ["maggie",0],
-            ["marge",0],
-            ["apu",0],
-            ["flanders",0],
-            ["babel",0],
+            ["homer", 0],
+            ["bart", 0],
+            ["lisa", 0],
+            ["maggie", 0],
+            ["marge", 0],
+            ["apu", 0],
+            ["flanders", 0],
+            ["babel", 0],
         ]
 
-        let grid = [[], [], [], []]
+        /* let grid = [[], [], [], []] */
+        let grid = [
+            ["homer", "flanders", "marge", "marge"],
+            ["babel", "bart", "apu", "maggie"],
+            ["apu", "maggie", "lisa", "babel"],
+            ["flanders", "homer", "bart", "lisa"]
+        ]
 
         let pareja = []
 
@@ -36,21 +42,21 @@
             item.addEventListener("click", comprobar, false);
         })
 
-        rellenar();
+        /* rellenar();
 
-        function yaHayPareja(spr){
-            if(parejasRell[spr][1] === 2){
+        function yaHayPareja(spr) {
+            if (parejasRell[spr][1] === 2) {
                 return true;
-            }else{
+            } else {
                 parejasRell[spr][1] += 1;
                 return false;
             }
         }
 
         function rellenar() {
-            for (let i = 0; i <4; i++) {
+            for (let i = 0; i < 4; i++) {
                 let j = 0;
-                while(j<4){
+                while (j < 4) {
                     let spr = Math.floor(Math.random() * 7);
                     if (!grid[i][j] && !yaHayPareja(spr)) {
                         grid[i][j] = parejasRell[spr][0];
@@ -58,22 +64,23 @@
                     }
                 }
             }
-        }
+        } */
 
         function ponerHaciaArriba(target, carta) {
             target.style.backgroundImage = `url(${parejas[carta]})`;
         }
 
-        function ponerHaciaAbajo(target, cartas) {
+        function ponerHaciaAbajo(cartas) {
             cartas.forEach(item => {
                 let r = item.row;
                 let c = item.col;
-                let btn = document.querySelector('button[data-row=""][data-col=""]');
+                let selector = `button[data-row="${r}"][data-col="${c}"]`;
+                let btn = document.querySelector(selector);
                 btn.style.backgroundImage = "url(../assets/game.png)";
             });
         }
 
-        function sumarPuntos(){
+        function sumarPuntos() {
             puntos += 10;
             puntuacion.innerHTML = `${puntos} puntos`;
         }
@@ -91,14 +98,11 @@
                     cartaA = grid[pareja[0].row][pareja[0].col];
                     cartaB = grid[pareja[1].row][pareja[1].col];
                     if (cartaA != cartaB) {
-                        ponerHaciaAbajo(pareja);
+                        setTimeout(ponerHaciaAbajo,1000,pareja);
                     } else {
-                        ponerHaciaArriba(oEv.target, grid[pulsado.row][pulsado.col]);
                         sumarPuntos();
                     }
                     pareja = [];
-                } else {
-                    ponerHaciaArriba(oEv.target, grid[pulsado.row][pulsado.col]);
                 }
             }
         }
