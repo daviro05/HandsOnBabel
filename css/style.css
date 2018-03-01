@@ -94,6 +94,33 @@
         width: 50%;
     }
 
+    .aside_principal{
+        border: 1px solid black;
+        width: 20%;
+        height: 300px;
+        float: left;
+        margin-left: 2%;
+        text-align: center;
+        position: fixed;
+        background-color: white;
+        z-index: -1;
+        margin-top: -2%;
+        
+    }
+
+    .aside_fondo{
+
+        width: 20%;
+        height: 300px;
+        float: left;
+        margin-left: 2%;
+        text-align: center;
+        background-color: #f99b2f;
+        margin-top: -2%;
+
+        
+    }
+
 }
 
 /* Común para todos los dispositivos */
