@@ -8,6 +8,8 @@ COSAS PENDIENTES
 
 - Mejorar el "Sabías que" de Home e intentar añadir otro aside en la parte derecha.
 
+- Poner enlaces en las imagenes de index
+
 - En Parejas hay que intentar que los cuadrados sean lo mas cuadrado posible y que las imagenes tengan todas el mismo tamaño
   (Algunas se achatan).
 
