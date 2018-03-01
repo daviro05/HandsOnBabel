@@ -33,6 +33,8 @@
 
         let pareja = []
 
+        let ePulsado2 = false;
+
 
         let cartas = document.querySelectorAll("button");
         let puntuacion = document.querySelector(".puntos");
@@ -78,6 +80,7 @@
                 let btn = document.querySelector(selector);
                 btn.style.backgroundImage = "url(../assets/game.png)";
             });
+            ePulsado2 = false;
         }
 
         function sumarPuntos() {
@@ -86,7 +89,7 @@
         }
 
         function comprobar(oEv) {
-            if (oEv.target.style.backgroundImage === 'url("../assets/game.png")' || oEv.target.style.backgroundImage === "") {
+            if ((oEv.target.style.backgroundImage === 'url("../assets/game.png")' || oEv.target.style.backgroundImage === "")&&(!ePulsado2)) {
                 console.log(oEv.target);
                 let row = oEv.target.dataset.row;
                 let col = oEv.target.dataset.col;
@@ -95,12 +98,14 @@
                 ponerHaciaArriba(oEv.target, grid[pulsado.row][pulsado.col]);
                 pareja.push(pulsado);
                 if (pareja.length === 2) {
+                    ePulsado2 = true;
                     cartaA = grid[pareja[0].row][pareja[0].col];
                     cartaB = grid[pareja[1].row][pareja[1].col];
                     if (cartaA != cartaB) {
                         setTimeout(ponerHaciaAbajo,1000,pareja);
                     } else {
                         sumarPuntos();
+                        ePulsado2 = false;
                     }
                     pareja = [];
                 }
