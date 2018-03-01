@@ -1,32 +1,37 @@
 (function () {
     document.addEventListener("DOMContentLoaded", () => {
 
-    let img1 = document.getElementById("respImg1").value;
-    console.log(img1);
-    let img2 = document.querySelector("#respImg2").value;
-    let img3 = document.querySelector("#respImg3").value;
-    let img4 = document.querySelector("#respImg4").value;
-    let img5 = document.querySelector("#respImg5").value;
-    let img6 = document.querySelector("#respImg6").value;
+    let respuestas = [
+        "calimero",
+        "morty",
+        "naranjito",
+        "snoopy",
+        "quagmire",
+        "troy mcclure"
+    ]
 
-    let res1 = document.querySelector("#solImg1").value;
-    let res2 = document.querySelector("#solImg2").value;
-    let res3 = document.querySelector("#solImg3").value;
-    let res4 = document.querySelector("#solImg4").value;
-    let res5 = document.querySelector("#solImg5").value;
-    let res6 = document.querySelector("#solImg6").value;
 
-    let caja = document.querySelectorAll("input[type=text]");
-    console.log(caja[0]);
-    caja[0].addEventListener("keyup",comprobar,false);
+    let cajas = document.querySelectorAll("input[type=text]");
+    let puntuacion = document.querySelector(".puntos");
+    let puntos = 0;
 
-    function comprobar(){
-        console.log("mia " + img1 + " respuesta " + res1);
-        if(img1 == res1){
-            caja[0].classList.add("correcto");
+    cajas.forEach(item => {
+        item.addEventListener("keyup",comprobar,false);
+    })
+
+    function comprobar(oEv){
+        console.log("mia " + oEv.target.value + " respuesta " + respuestas[oEv.target.id-1]);
+        if(oEv.target.value === respuestas[oEv.target.id-1]){
+            oEv.target.classList.add("correcto");
+            oEv.target.classList.remove("incorrecto");
+            puntos+=10;
+            puntuacion.innerHTML = puntos;
+            oEv.target.disabled = true;
         }
-        else
-            caja[0].classList.add("incorrecto");
+        else{
+            oEv.target.classList.remove("correcto");
+            oEv.target.classList.add("incorrecto");
+        }
     }
 
 
