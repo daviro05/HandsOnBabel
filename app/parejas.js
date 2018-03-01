@@ -86,7 +86,7 @@
         }
 
         function comprobar(oEv) {
-            if (oEv.target.style.backgroundImage != "url(../assets/game.png)" || oEv.target.style.backgroundImage === "") {
+            if (oEv.target.style.backgroundImage === 'url("../assets/game.png")' || oEv.target.style.backgroundImage === "") {
                 console.log(oEv.target);
                 let row = oEv.target.dataset.row;
                 let col = oEv.target.dataset.col;
