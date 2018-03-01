@@ -1,61 +1,55 @@
 (function () {
     document.addEventListener("DOMContentLoaded", () => {
 
+        localStorage.getItem('puntuacion') ? localStorage.getItem('puntuacion') : null;
+
         let preguntas = [
             "¿Cuándo acabó la II Guerra Mundial?",
             "¿Cuál es el océano más grande?",
-            "¿Cuál es el disco más vendido de la historia?"
+            "¿Cuál es el disco más vendido de la historia?",
+            "¿Qué deporte practicaba Michael Jordan?",
+            "Si 50 es el 100%, ¿cuánto es el 90%?",
+            "¿Cuál es tercer planeta en el sistema solar?"
+
+
         
         ];
         let respuestas = [
-        ["1945", "1939", "1944", "1936"],
-        ["Pacífico", "Atlántico", "Índico", "Antártico"],
-        ["Thriller", "Back in Black", "The Bodyguard", "The Dark Side of the Moon"]
-        
+        ["1939", "1944", "1936","1945"],
+        ["Atlántico","Índico","Pacífico","Antártico"],
+        ["Back in Black", "The Bodyguard","Thriller", "The Dark Side of the Moon"],
+        ["Baloncesto","Fútbol","Natación","Esgrima"],
+        ["25","45","40","35"],
+        ["Mercurio","Marte","Venus","La Tierra"]
         ];
+
+        let soluciones = [3,2,2,0,1,3];
         
-        var correcta;
         var puntos = 0;
+        var indice = 0;
+        var correcta="";
+        var carga_resp ="";
         jugar();
+
         document.querySelector('#comprobar').addEventListener('click', comprobar, false);
     
         function jugar(){
-        
-            var aleatorio = Math.floor(Math.random()*preguntas.length);
-            console.log(aleatorio);
-            var respuestas_posibles = respuestas[aleatorio];
-            
-            
-            var posiciones = [0,1,2,3];
-            var respuestas_reordenadas = [];
-            
-            var leida = false;
-            for(i in respuestas_posibles){
-                var posicion_aleatoria = Math.floor(Math.random()*posiciones.length);
-
-                if(posicion_aleatoria == 0 && leida == false){
-                    correcta = i;
-                    leida = true;
-                }
-                respuestas_reordenadas[i] = respuestas_posibles[posiciones[posicion_aleatoria]];
-                posiciones.splice(posicion_aleatoria, 1);
-            }
-            
-            var txt_respuestas="";
+            carga_resp ="";
+            document.querySelector("#pregunta").innerHTML = "<p>"+preguntas[indice]+"</p>";
             var num = 0;
-            for(i in respuestas_reordenadas){
-                txt_respuestas += '<span><input type="radio" name="res" id="respuesta'+num+'" value="'+i+'"><label for="respuesta'+num+'">'+respuestas_reordenadas[i]+'</label></span>';
-                num++;
-            }
-                document.querySelector("#respuestas").innerHTML = "<div class='resp'>"+txt_respuestas+"</div>";
-                document.querySelector("#pregunta").innerHTML = "<p>"+preguntas[aleatorio]+"</p>";
-            }
-            
-            function comprobar(){
+            respuestas[indice].forEach(element => {
+                carga_resp += '<span><input type="radio" name="res" id="respuesta'+num+'" value="'+
+                num+'"><label for="respuesta'+num+'">'+element+'</label></span>';
+                num++;                
+            });
+            correcta = soluciones[indice];
+            document.querySelector("#respuestas").innerHTML = "<div class='resp'>"+carga_resp+"</div>";
+        }
 
-                var respuesta = document.querySelector("input[type=radio]:checked").value;
-                var puntuacion = document.querySelector(".puntos");
-            
+        function comprobar(){
+            var respuesta = document.querySelector("input[type=radio]:checked").value;
+            var puntuacion = document.querySelector(".puntos");
+        
                 if(respuesta == correcta){
                     puntos+=10;
                     puntuacion.innerHTML = puntos;
@@ -63,13 +57,28 @@
                     puntos-=10;
                     puntuacion.innerHTML = puntos;
                 }
+       
+            indice++;
+            console.log(indice +" "+ preguntas.length);
+            if(indice < preguntas.length)
                 jugar();
+            else
+                finalizar();
+        }
+
+        function finalizar(){
+            
+            document.querySelector('#btn_comprobar').style.display = 'none';
+            document.querySelector('#record').style.display = 'block';
+
+            if(localStorage.getItem('puntuacion') < puntos){
+                localStorage.setItem('puntuacion',puntos);
+                document.querySelector('#record'). innerHTML = " Has superado tu récord";
             }
+            else
+                document.querySelector('#record'). innerHTML = " Vaya...no has superado tu récord";
 
-
+        }
+        
     } , false)
 })()
-
-    
-
-
