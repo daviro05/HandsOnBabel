@@ -28,8 +28,6 @@
         width:100%;
     }
 
-
-
     .aside_oculto{
         display:none;
         width: 100%;
@@ -67,7 +65,7 @@
         width: 50%;
         margin: auto;
         background-color: white;
-        margin-bottom: 2%;
+        margin-bottom: 1%;
         margin-top:1rem;
         border-radius: 10px;
     }
@@ -127,14 +125,14 @@
     .aside_oculto{
         display:none;
         width: 20%;
-        min-height: 100%;
+        height: 300px;
         float: left;
         margin-left: 2%;
         text-align: center;
         position: fixed;
         margin-top: 4%;
-        background-image: url(../assets/sabiasque.png);
-        background-repeat: repeat;
+        background-image: url("../assets/sabiasque.png");
+        background-repeat: no-repeat;
         background-size: 100%;
     }
 
@@ -155,7 +153,6 @@
 body{
     background: #f99b2f; /* Old browsers */
     font-family: 'Permanent Marker', cursive;
-
 }
 
 article{
@@ -188,6 +185,7 @@ footer {
     width: 100%;
     margin-top:1rem;
     padding: 2rem; 
+   
   }
 
 .btnSug{
@@ -277,6 +275,8 @@ footer {
 
 .desc{
     font-family: 'Indie Flower', cursive;
+    height: 180px;
+    overflow-y: scroll;
 }
 
 /* Efecto animado index.html para el boton de JUGAR*/
@@ -309,4 +309,10 @@ footer {
   .enlace_anim:hover:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+
+  .sonido{
+    margin-bottom: 1%;
+      text-align: center;
+      cursor: pointer;
   }

@@ -23,6 +23,7 @@
             ["babel", 0],
         ]
 
+        /* let grid = [[], [], [], []] */
         let grid = [
             ["homer", "flanders", "marge", "marge"],
             ["babel", "bart", "apu", "maggie"],
@@ -43,6 +44,30 @@
             item.addEventListener("click", comprobar, false);
         })
 
+        /* rellenar();
+
+        function yaHayPareja(spr) {
+            if (parejasRell[spr][1] === 2) {
+                return true;
+            } else {
+                parejasRell[spr][1] += 1;
+                return false;
+            }
+        }
+
+        function rellenar() {
+            for (let i = 0; i < 4; i++) {
+                let j = 0;
+                while (j < 4) {
+                    let spr = Math.floor(Math.random() * 7);
+                    if (!grid[i][j] && !yaHayPareja(spr)) {
+                        grid[i][j] = parejasRell[spr][0];
+                        j++;
+                    }
+                }
+            }
+        } */
+
         function ponerHaciaArriba(target, carta) {
             target.style.backgroundImage = `url(${parejas[carta]})`;
         }
@@ -60,13 +85,15 @@
 
         function sumarPuntos() {
             puntos += 10;
-            puntuacion.innerHTML = `${puntos} puntos`;
+            puntuacion.innerHTML = `${puntos}`;
         }
 
         function comprobar(oEv) {
             if ((oEv.target.style.backgroundImage === 'url("../assets/game.png")' || oEv.target.style.backgroundImage === "")&&(!ePulsado2)) {
+                console.log(oEv.target);
                 let row = oEv.target.dataset.row;
                 let col = oEv.target.dataset.col;
+                console.log(row + " " + col);
                 let pulsado = { row: row, col: col };
                 ponerHaciaArriba(oEv.target, grid[pulsado.row][pulsado.col]);
                 pareja.push(pulsado);

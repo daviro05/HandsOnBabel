@@ -20,11 +20,10 @@
         width: 100%;
         height: 100%;
         background-image: url( '../assets/game.png' );
-        background-size: 100%;
+        background-size: 100% 100%;
         background-repeat: no-repeat;
-        background-color:white;
     }
 
-    .puntos{
+    .puntuacion{
         text-align:center;
     }
