@@ -125,14 +125,14 @@
     .aside_oculto{
         display:none;
         width: 20%;
-        height: 300px;
+        height: 100%;
         float: left;
         margin-left: 2%;
         text-align: center;
         position: fixed;
         margin-top: 4%;
-        background-image: url("../assets/sabiasque.png");
-        background-repeat: no-repeat;
+        background-image: url(../assets/sabiasque.png);
+        background-repeat: repeat;
         background-size: 100%;
     }
 
