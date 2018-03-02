@@ -54,7 +54,7 @@ export class Main {
     }
 
     desplegarPanel(){
-        if(this.vista.ePanel.style.display == "none")
+        if(this.vista.ePanel.style.display === "none" || this.vista.ePanel.style.display === "")
             this.vista.ePanel.style.display = "block";
         else
              this.vista.ePanel.style.display = "none";
