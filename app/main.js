@@ -11,14 +11,22 @@ export class Main {
             eSugForm: document.querySelector('#sugerencia'),
             ePrefForm: document.querySelectorAll('#formSug input[type="checkbox"]'),
             eBtnPanel: document.querySelector(".aside_visible"),
-            ePanel: document.querySelector(".aside_oculto"),
             eErrorForm: document.querySelector("#error"),
+            ePanel:  document.querySelector(".aside_oculto"),
+            eCaras: document.querySelector("#enlace_caras"),
+            eParejas: document.querySelector("#enlace_parejas"),
+            eTrivial: document.querySelector("#enlace_trivial"),
             oPrefForm: [],
         }
         this.vista.eBtnMenuMob.addEventListener('click', this.desplegarMenu.bind(this), false);
         this.vista.eBtnSug ? this.vista.eBtnSug.addEventListener('click', this.desplegarFormSug.bind(this), false) : null;
         this.vista.eFormSug ? this.vista.eFormSug.addEventListener('submit', this.manejarForm.bind(this), false) : null;
         this.vista.eBtnPanel ? this.vista.eBtnPanel.addEventListener('click', this.desplegarPanel.bind(this), false) : null;
+        this.vista.eBtnPanel ? this.vista.eBtnPanel.addEventListener('click',this.desplegarPanel.bind(this),false) : null;
+
+        this.vista.eCaras.addEventListener('click',this.ircaras.bind(this),false);
+        this.vista.eParejas.addEventListener('click',this.irparejas.bind(this),false);
+        this.vista.eTrivial.addEventListener('click',this.irtrivial.bind(this),false);
     }
 
     desplegarMenu() {
@@ -67,6 +75,12 @@ export class Main {
             this.vista.ePanel.style.display = "none";
     }
 
+
+    ircaras(){document.location.href = '../paginas/caras.html';}
+
+    irparejas(){document.location.href = '../paginas/parejas.html';}
+
+    irtrivial(){document.location.href = '../paginas/trivial.html';}
 
 
 }

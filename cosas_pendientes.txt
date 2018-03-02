@@ -1,20 +1,9 @@
 
 COSAS PENDIENTES
 
-- Poner bien los titulos de las paginas 
-(Los encabezados donde está escrito por ejemplo "Trivial de preguntas", "Adivina los personajes", etc).
-
-- Colocar bien el footer en la página de Trivial
-
-- Mejorar el "Sabías que" de Home e intentar añadir otro aside en la parte derecha.
-
 - Poner enlaces en las imagenes de index
 
 - En Parejas hay que intentar que los cuadrados sean lo mas cuadrado posible y que las imagenes tengan todas el mismo tamaño
   (Algunas se achatan).
-
-- Retocar el formulario de sugerencias
-
-- ?? Incluir algun video o audio?
 
 - Mejorar diseño en general
