@@ -52,7 +52,7 @@
         width: 50%;
         margin: auto;
         background-color: white;
-        margin-bottom: 2%;
+        margin-bottom: 1%;
         margin-top:1rem;
         border-radius: 10px;
     }
@@ -140,7 +140,6 @@
 body{
     background: #f99b2f; /* Old browsers */
     font-family: 'Permanent Marker', cursive;
-
 }
 
 article{
@@ -173,6 +172,7 @@ footer {
     width: 100%;
     margin-top:1rem;
     padding: 2rem; 
+   
   }
 
 .btnSug{
@@ -262,6 +262,8 @@ footer {
 
 .desc{
     font-family: 'Indie Flower', cursive;
+    height: 180px;
+    overflow-y: scroll;
 }
 
 /* Efecto animado index.html para el boton de JUGAR*/
@@ -294,4 +296,10 @@ footer {
   .enlace_anim:hover:before {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+
+  .sonido{
+    margin-bottom: 1%;
+      text-align: center;
+      cursor: pointer;
   }

@@ -85,7 +85,7 @@
 
         function sumarPuntos() {
             puntos += 10;
-            puntuacion.innerHTML = `${puntos} puntos`;
+            puntuacion.innerHTML = `${puntos}`;
         }
 
         function comprobar(oEv) {

@@ -45,3 +45,7 @@
 #record{
     display: none;
 }
+
+main{
+    min-height: 100%;
+}
