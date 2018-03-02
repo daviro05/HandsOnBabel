@@ -28,8 +28,21 @@
         width:100%;
     }
 
+
+
     .aside_oculto{
-        display: none;
+        display:none;
+        width: 100%;
+        text-align: center;
+        margin-top: 4%;
+    }
+
+    .aside_visible{
+        cursor: pointer;
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        margin-top:1rem;
     }
 }
 
