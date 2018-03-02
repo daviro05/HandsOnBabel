@@ -45,3 +45,18 @@
 #record{
     display: none;
 }
+
+
+
+@media screen and (max-width:580px){
+    main{
+        margin-bottom:40%;
+    }
+}
+
+
+@media screen and (min-width:580px){
+    main{
+        margin-bottom:18%;
+    }
+}
