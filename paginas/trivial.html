@@ -2,85 +2,97 @@
 <html lang="es">
 
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="../css/trivial.css">
-        <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
-        <script src="../app/app.js" type="module"></script>
-        <script src="../app/trivial.js"></script>
-        <title>DCGames - Trivial</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/trivial.css">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
+    <script src="../app/app.js" type="module"></script>
+    <script src="../app/trivial.js"></script>
+    <title>DCGames - Trivial</title>
 </head>
 
 <body>
-        <header>
+    <header>
         <h1>
-                <i class="fa fa-gamepad"></i>Babel Games</h1>
-        </header>
-        <!--  Menu principal -->
-        <nav class="menuPC">
-                <ul>
-                    <li>
-                        <a  href="../index.html">Home</a>
-                    </li>
-                    <li>
-                        <a  href="../paginas/trivial.html">Trivial</a>
-                    </li>
-                    <li>
-                        <a  href="../paginas/caras.html">Personajes</a>
-                    </li>
-                    <li>
-                        <a  href="../paginas/parejas.html">Parejas</a>
-                    </li>
-                    <li>
-                        <a  href="../about.html">About</a>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="menuMob">
-                <span id="menuBtn" class="fa fa-bars"></span>
-                <ul>
-                    <li>
-                        <a  href="../index.html">Home</a>
-                    </li>
-                    <li>
-                        <a  href="../paginas/trivial.html">Trivial</a>
-                    </li>
-                    <li>
-                        <a  href="../paginas/caras.html">Personajes</a>
-                    </li>
-                    <li>
-                        <a href="../paginas/parejas.html">Parejas</a>
-                    </li>
-                    <li>
-                        <a  href="../about.html">About</a>
-                    </li>
-                </ul>
-            </nav>
-        <!-- Contenido principal -->
-        <main>
+            <i class="fa fa-gamepad"></i>Babel Games</h1>
+    </header>
+    <!--  Menu principal -->
+    <nav class="menuPC">
+        <ul>
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="../paginas/trivial.html">Trivial</a>
+            </li>
+            <li>
+                <a href="../paginas/caras.html">Personajes</a>
+            </li>
+            <li>
+                <a href="../paginas/parejas.html">Parejas</a>
+            </li>
+            <li>
+                <a href="../about.html">About</a>
+            </li>
+        </ul>
+    </nav>
+    <nav class="menuMob">
+        <span id="menuBtn" class="fa fa-bars"></span>
+        <ul>
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="../paginas/trivial.html">Trivial</a>
+            </li>
+            <li>
+                <a href="../paginas/caras.html">Personajes</a>
+            </li>
+            <li>
+                <a href="../paginas/parejas.html">Parejas</a>
+            </li>
+            <li>
+                <a href="../about.html">About</a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Contenido principal -->
+    <main>
+        <aside class="aside_visible">Instrucciones</aside>
+        <aside class="aside_oculto">
+            <p>En este juego debes contestar a las preguntas correctamente para ganar puntos.
+            </p>
+            <p>
+                Para ello solo debes hacer click en la respuesta que crees que es correcta y pulsar al botón comprobar.
+            </p>
+        </aside>
         <section>
             <article>
                 <h2>Trivial de preguntas</h2>
             </article>
         </section>
         <section class="sec_trivial">
-                <article>
-                        <div id="pregunta" class="pregunta"></div>
-                        <div id="respuestas" class="respuestas"></div>
-                        <div id="puntuacion" class="puntuacion"><p>Puntuación</p><span class="puntos">0</span> puntos</div>
-                        <div id="btn_comprobar" class="btn_comprobar"><input class="btnForm" type="button" id="comprobar" value="Comprobar"></div>
-                        <div id="record"></div>
-                
-                </article>
+            <article>
+                <div id="pregunta" class="pregunta"></div>
+                <div id="respuestas" class="respuestas"></div>
+                <div id="puntuacion" class="puntuacion">
+                    <p>Puntuación</p>
+                    <span class="puntos">0</span> puntos</div>
+                <div id="btn_comprobar" class="btn_comprobar">
+                    <input class="btnForm" type="button" id="comprobar" value="Comprobar">
+                </div>
+                <div id="record"></div>
+
+            </article>
         </section>
-        </main>
-        <footer>
+    </main>
+    <footer>
         <address>
-                <p>&copy; Carlos López y David Rodríguez. BabelCamp 2018. Madrid</p>
+            <p>&copy; Carlos López y David Rodríguez. BabelCamp 2018. Madrid</p>
         </address>
-        </footer>
+    </footer>
 </body>
 
 </html>
