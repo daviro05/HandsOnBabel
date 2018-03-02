@@ -44,6 +44,10 @@
         padding: 1rem 0rem;
         background-color: peru;
     }
+
+    article p{
+        background-color: white;
+    }
 }
 
 /*CSS para ordenador*/
