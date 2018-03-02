@@ -317,3 +317,9 @@ footer {
       text-align: center;
       cursor: pointer;
   }
+
+  .error{
+      display:none;
+      color:red;
+  }
+
