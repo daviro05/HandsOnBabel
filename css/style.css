@@ -4,11 +4,11 @@
 @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
 @import "./reset.css";
 @import "./header.css";
-@import url("./menuPC.css") screen and (min-width:580px);
-@import url("./menuMob.css") screen and (max-width:580px);
+@import url("./menuPC.css") screen and (min-width:800px);
+@import url("./menuMob.css") screen and (max-width:800px);
 
 /*CSS para móvil*/
-@media screen and (max-width:580px){
+@media screen and (max-width:800px){
     .menuPC{
         display:none;
     }
@@ -43,11 +43,13 @@
         border: 1px solid black;
         border-radius: 10px;
         margin-top:1rem;
+        padding: 1rem 0rem;
+        background-color: peru;
     }
 }
 
 /*CSS para ordenador*/
-@media screen and (min-width:580px){
+@media screen and (min-width:800px){
 
     .menuMob{
         display:none;
