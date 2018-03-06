@@ -48,6 +48,12 @@
     article p{
         background-color: white;
     }
+
+    .mobile_ham img{
+        width: 20px;
+        justify-content: center;
+        margin: 0;
+    }
 }
 
 /*CSS para ordenador*/
