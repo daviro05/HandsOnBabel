@@ -3,9 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home',
   template: `
-    <p>
-     lorem
-    </p>
+    <div class="principal">
+    </div>
   `,
   styles: []
 })
