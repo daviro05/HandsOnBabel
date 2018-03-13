@@ -27,3 +27,7 @@ main{
 .titleSection{
     text-align: center;
 }
+
+li{
+    list-style: none;
+}

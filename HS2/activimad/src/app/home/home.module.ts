@@ -5,12 +5,15 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ActivimadService } from '../services/activimad.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ComponentsModule } from '../components/components.module';
+import { EventComponent } from '../components/event/event.component';
 
 @NgModule({
   imports: [
     CommonModule,
     HomeRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ComponentsModule
   ],
   providers: [
     ActivimadService
