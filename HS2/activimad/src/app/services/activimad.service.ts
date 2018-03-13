@@ -23,6 +23,7 @@ export class ActivimadService {
             response.items.forEach(element => {
               this.aEventos.push(element.title);
             });
+            // result["@graph"].forEach((item)=>(console.log(item.title)));
             return new Promise((resolve, reject) => resolve(this.aEventos));
           }
         }
