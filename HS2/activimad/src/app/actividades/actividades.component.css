@@ -1,0 +1,9 @@
+.form-control{
+    width: 90%;
+    display: inline;
+    text-align: left;
+}
+
+.form-group{
+    text-align: center;
+}

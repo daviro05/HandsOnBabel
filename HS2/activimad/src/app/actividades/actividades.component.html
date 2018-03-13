@@ -1,0 +1,12 @@
+<div class="principal">
+  <div class="form-group">
+    <label for="buscar"><i class="fa fa-search"></i></label>
+    <input type="text"
+      class="form-control" name="buscar" id="buscar" placeholder="Buscar" (keyup)="getEventsContains()" [(ngModel)]="search">
+  </div>
+    <ul>
+      <li *ngFor="let eventI of aEvents">
+       <app-event [event]="eventI"></app-event>
+      </li>
+    </ul>
+  </div>

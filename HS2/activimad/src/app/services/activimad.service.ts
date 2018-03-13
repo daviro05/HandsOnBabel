@@ -44,7 +44,15 @@ export class ActivimadService {
   } */
 
   getNextEvents(limit: number) {
-    return this.http.get(this.urlBase+'?_limit='+limit).toPromise()
+    return this.http.get(this.urlBase+'?_sort=dtstart&_order=asc&_limit='+limit).toPromise()
+    .then((response: any) => {
+      this.aEventos = response;
+      return this.aEventos;
+    });
+  }
+
+  getAllEventsContains(text: string) {
+    return this.http.get(this.urlBase+'?q='+text).toPromise()
     .then((response: any) => {
       this.aEventos = response;
       return this.aEventos;
