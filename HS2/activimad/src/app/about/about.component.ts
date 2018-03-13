@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
     <h1 class="titleSection">About</h1>
     <app-desarrollador [idD] ='0'></app-desarrollador>
     <app-desarrollador [idD] ='1'></app-desarrollador>
+    <app-formulario></app-formulario>
   `,
   styles: []
 })

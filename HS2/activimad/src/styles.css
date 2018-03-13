@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Itim');
 
 .fondo{
     position: fixed;
@@ -14,6 +15,7 @@
 
 body{
     min-height: 30rem;
+    font-family: 'Itim', cursive;
 }
 
 main{
