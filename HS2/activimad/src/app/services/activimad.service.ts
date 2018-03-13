@@ -9,7 +9,7 @@ export class ActivimadService {
   constructor(public http: HttpClient) {
     /* this.urlBase = 'https://goo.gl/9HNjkd'; */
     // tslint:disable-next-line:max-line-length
-    this.urlBase = 'https://datos.madrid.es/portal/site/egob/menuitem.ac61933d6ee3c31cae77ae7784f1a5a0/?vgnextoid=00149033f2201410VgnVCM100000171f5a0aRCRD&format=json&file=0&filename=206974-0-agenda-eventos-culturales-100&mgmtid=6c0b6d01df986410VgnVCM2000000c205a0aRCRD&preview=full';
+    this.urlBase = 'http://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json';
     this.aEventos = [];
   }
 
@@ -23,6 +23,7 @@ export class ActivimadService {
             response.items.forEach(element => {
               this.aEventos.push(element.title);
             });
+            // result["@graph"].forEach((item)=>(console.log(item.title)));
             return new Promise((resolve, reject) => resolve(this.aEventos));
           }
         }

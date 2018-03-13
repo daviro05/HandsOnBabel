@@ -1,0 +1,23 @@
+.row{
+    background-color: rgba(43, 187, 223, 0.8);
+    margin-right:1rem;
+    margin-bottom: 1rem;
+    border-radius: 0.5rem;
+}
+
+.titleEv{
+    font-size: 1rem;
+    background-color: black;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
+    color:white;
+    width: 100%;
+    font-weight: bold;
+}
+
+article{
+    width: 100%;
+}
+
+p{
+    padding-left: 1rem;
+}
