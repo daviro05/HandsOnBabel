@@ -1,0 +1,15 @@
+.izq{
+    width: 25%;
+    margin: 0px;
+    float: left;
+    margin-right: 1rem;
+}
+.der{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+.row{
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
