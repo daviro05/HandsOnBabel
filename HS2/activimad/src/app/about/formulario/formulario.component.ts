@@ -23,13 +23,17 @@ export class FormularioComponent implements OnInit {
   }
 
   btnMostrarOcultar() {
-    if (this.mostrar) {
-      this.mostrar = false;
-      this.etiqueta = 'Cerrar ';
-    } else {
-      this.mostrar = true;
-      this.etiqueta = 'Abrir ';
+      if (this.mostrar) {
+        this.mostrar = false;
+        this.etiqueta = 'Cerrar ';
+      } else {
+        this.mostrar = true;
+        this.etiqueta = 'Abrir ';
+      }
     }
+
+    btnBorrar() {
+      this.formUsuario.reset();
     }
 
     enviar() {
