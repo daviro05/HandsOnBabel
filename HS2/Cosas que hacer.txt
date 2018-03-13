@@ -16,6 +16,8 @@
 
 - Todos los eventos: En la pagina ver las distintas categorias, paginacion, etc.
 
+- Sugerencias: Se muestran todos los datos que se han introducido en el formulario de sugerencias.
+
 -----
 
 - Aside con los próximos 5 eventos.
