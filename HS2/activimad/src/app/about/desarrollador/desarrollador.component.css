@@ -1,0 +1,12 @@
+.desc{
+    font-family: 'Indie Flower', cursive;
+    height: 180px;
+    overflow-y: scroll;
+}
+
+.izq{
+    float: left;
+}
+.der{
+    float: right;
+}

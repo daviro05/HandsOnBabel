@@ -16,8 +16,9 @@ body{
     min-height: 30rem;
 }
 
-.principal{
-    border-radius: 5rem;
+main{
+    margin: 1rem 1rem;
+    border-radius: 0.3rem;
     background-color: white;
-    opacity: 0.5;
+    min-height: 3rem;
 }
