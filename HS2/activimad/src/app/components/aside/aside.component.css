@@ -1,0 +1,32 @@
+.titleAside{
+    text-align:center;
+    font-weight: bold;
+}
+
+ul{
+    padding: 0.5rem 1rem;
+}
+
+ul li{
+    cursor: pointer;
+}
+
+.panel-heading{
+    text-align: center;
+    background-color: white;
+    color: black;
+    border: 4px black solid;
+}
+
+.panel{
+    background-color: rgba(0,0,0,0.8);
+    width: 15%;
+    position: absolute;
+    top: 30%;
+    margin-left: 85%;
+    font-size: 0.8rem;
+}
+
+.panel p{
+    text-align: center;
+}

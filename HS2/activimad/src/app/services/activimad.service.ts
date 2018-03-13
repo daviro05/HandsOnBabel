@@ -43,8 +43,8 @@ export class ActivimadService {
       );
   } */
 
-  getNext5Events() {
-    return this.http.get(this.urlBase+'?_limit=5').toPromise()
+  getNextEvents(limit: number) {
+    return this.http.get(this.urlBase+'?_limit='+limit).toPromise()
     .then((response: any) => {
       this.aEventos = response;
       return this.aEventos;
