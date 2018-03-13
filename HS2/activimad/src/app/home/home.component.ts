@@ -7,8 +7,7 @@ import { ActivimadService } from '../services/activimad.service';
     <div class="principal">
       <ul>
         <li *ngFor="let eventI of aEvents">
-         <!--<app-event [event]="eventI"></app-event>-->
-         {{eventI}}
+         <app-event [event]="eventI"></app-event>
         </li>
       </ul>
     </div>
@@ -22,7 +21,9 @@ export class HomeComponent implements OnInit {
   constructor(public activS: ActivimadService) { }
 
   ngOnInit() {
-    this.activS.getAllEventos().then((response: any) => this.aEvents = response);
+    this.activS.getAllEventos().then(
+      response =>  this.aEvents = response
+    );
     /* this.activS.getAllEventos().then((response: any) => this.aEvents = response); */
     /* this.aEvents = [
       { title: 'Evento1', date: '14/03/2018', location: 'Madrid', info: 'Este es el evento1' },

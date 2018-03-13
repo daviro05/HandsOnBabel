@@ -1,8 +1,8 @@
 <div class="row">
   <article>
     <p class="titleEv">{{event.title}}</p>
-    <p>Fecha: {{event.date}}</p>
-    <p>Lugar: {{event.location}}</p>
-    <p>{{event.info}}</p>
+    <p>Fecha: {{event.dtstart}}</p>
+    <p>Lugar: {{event["event-location"]}}</p>
+    <p>{{event.description}}</p>
   </article>
 </div>
