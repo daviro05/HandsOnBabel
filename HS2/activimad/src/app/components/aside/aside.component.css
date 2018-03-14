@@ -21,10 +21,11 @@ ul li{
 .panel{
     background-color: rgba(0,0,0,0.8);
     width: 15%;
-    position: absolute;
-    top: 30%;
+    position: fixed;
+    top: 1%;
     margin-left: 85%;
     font-size: 0.8rem;
+    z-index: 3000;
 }
 
 .panel p{
