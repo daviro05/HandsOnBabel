@@ -2,7 +2,7 @@
 
 - Home: Ruleta de actividad aleatoria. Meter contenido sobre actividades en Madrid.
 
-- About: Colocar bien el contenido
+- About: Colocar bien el contenido. Formulario. Meter pattern
 
 - Blog: Tipo foro, que se vayan guardando los comentarios, en un json con api_rest con json_server.
 

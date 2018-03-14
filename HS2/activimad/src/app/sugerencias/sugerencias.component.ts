@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Usuario } from '../modelos/usuarios';
+import { UsuariosService } from '../services/usuarios.service';
 
 @Component({
   selector: 'app-sugerencias',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SugerenciasComponent implements OnInit {
 
-  constructor() { }
+  aUsuarios: Array<Usuario>;
+
+  constructor(public usuariosService: UsuariosService) { }
 
   ngOnInit() {
+    this.aUsuarios = [];
+    this.usuariosService.getUsuarios().then(
+       response =>  this.aUsuarios = response
+     );
+  }
+
+  deleteUsuario (i) {
+    this.usuariosService.deleteUsuario(i)
+    .then(
+      () => {this.usuariosService.getUsuarios()
+        .then(response =>  this.aUsuarios = response);
+      });
   }
 
 }

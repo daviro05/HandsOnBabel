@@ -1,3 +1,18 @@
-<p>
-  sugerencias works!
-</p>
+<div class="container">
+<h2>Sugerencias Registradas</h2>
+<div class="comments-list">
+<div class="media" *ngFor="let item of aUsuarios">
+       <img *ngIf="item.sexo == 'Masculino'" class="imagen" src="./assets/usuario.png" alt="imagen usuario">
+       <img *ngIf="item.sexo == 'Femenino'" class="imagen" src="./assets/usuario2.png" alt="imagen usuario">
+     <div class="media-body">
+       <h4 class="media-heading user_name">{{item.nombre}} {{item.apellidos}}</h4>
+       <small>{{item.email}}</small>
+       <p> Preferencias:  
+        <span [hidden]="item.preferencias['aventura'] == false">Aventura </span>
+        <span [hidden]="item.preferencias['cultural'] == false">Cultural </span>
+        <span [hidden]="item.preferencias['deportes'] == false">Deportes </span>
+       <p>{{item.sugerencia}}</p>
+     </div>
+   </div>
+</div>
+</div>

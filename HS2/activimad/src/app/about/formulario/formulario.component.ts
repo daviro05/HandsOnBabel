@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild, Output, EventEmitter  } from '@angular/core';
 import { Usuario } from '../../modelos/usuarios';
+import { UsuariosService } from '../../services/usuarios.service';
 
 @Component({
   selector: 'app-formulario',
@@ -12,8 +13,10 @@ export class FormularioComponent implements OnInit {
   mostrar: boolean;
   etiqueta: string;
   oUsuario: Usuario;
+  @Output() outAddSugerencia: EventEmitter<Usuario>;
 
-  constructor() {
+  constructor(public usuariosService: UsuariosService) {
+   // this.outAddSugerencia = new EventEmitter();
   }
 
   ngOnInit() {
@@ -38,12 +41,14 @@ export class FormularioComponent implements OnInit {
 
     enviar() {
       console.log('Datos enviados');
+      this.usuariosService.setUsuarios(this.oUsuario).then();
       this.resetFormulario();
       this.formUsuario.reset();
     }
 
     private resetFormulario() {
-      this.oUsuario = {nombre: '', apellidos: '', email: '', sugerencia: ''};
+      // tslint:disable-next-line:max-line-length
+      this.oUsuario = {nombre: '', apellidos: '', email: '', sexo: '', preferencias: {deportes: false, cultura: false, aventura: false}, sugerencia: ''};
     }
 
   }
