@@ -4,7 +4,7 @@ import { ActivimadService } from '../services/activimad.service';
 @Component({
   selector: 'app-home',
   template: `
-    <div class="principal">
+    <div class="principal home">
       <ul>
         <li *ngFor="let eventI of aEvents">
          <app-event [event]="eventI" [resumen]="true"></app-event>

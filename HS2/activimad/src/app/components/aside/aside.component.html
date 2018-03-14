@@ -2,12 +2,12 @@
   <div class="panel-heading">{{title}}</div>
   <div class="panel-body">
     <p>
-      <button (click) = "getNext5Events()">5</button>
-      <button (click) = "getNext10Events()">10</button>
-      <button (click) = "getNext15Events()">15</button>
+      <button class="btn btn-outline-info" (click) = "getNext5Events()">5</button>
+      <button class="btn btn-outline-info" (click) = "getNext10Events()">10</button>
+      <button class="btn btn-outline-info" (click) = "getNext15Events()">15</button>
     </p>
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let event of aEvents">{{event.title}}</li>
+      <li class="list-group-item" *ngFor="let event of aEvents" (click)="btnEvent()"><a class="nav-link linkRes" routerLinkActive="active" [routerLink]="['/actividades', event.id]">{{event.title}}</a></li>
     </ul>
   </div>
 </div>

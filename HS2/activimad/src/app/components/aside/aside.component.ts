@@ -38,4 +38,8 @@ export class AsideComponent implements OnInit {
     this.title = 'Próximos 15 eventos';
   }
 
+  btnEvent() {
+    console.dir(this.aEvents);
+  }
+
 }

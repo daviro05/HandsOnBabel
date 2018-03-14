@@ -1,6 +1,6 @@
 <div class="row">
-  <a class="nav-link" routerLinkActive="active" [routerLink]="['/actividades', event.id]">
-    <article [hidden]="resumen==true">
+  <a [hidden]="resumen==true" class="nav-link" routerLinkActive="active" [routerLink]="['/actividades', event.id]">
+    <article >
       <p class="titleEv">{{event.title}}</p>
       <p [hidden]="event.dtstart== ''">Fecha: {{event.dtstart}}</p>
       <p [hidden]="event['event-location']== ''">Lugar: {{event["event-location"]}}</p>

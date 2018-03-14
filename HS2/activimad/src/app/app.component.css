@@ -1,3 +1,13 @@
 main{
     min-height: 29rem;
 }
+
+.home ul li:nth-last-child(odd) .img{
+    background-image: url(/assets/theatre.png);
+    background-size: 3rem;
+}
+
+.home ul li:nth-last-child(even) .img{
+    background-image: url(/assets/night.png);
+    background-size: 3rem;
+}
