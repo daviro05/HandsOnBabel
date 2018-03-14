@@ -7,7 +7,7 @@ import { ActivimadService } from '../services/activimad.service';
     <div class="principal">
       <ul>
         <li *ngFor="let eventI of aEvents">
-         <app-event [event]="eventI"></app-event>
+         <app-event [event]="eventI" [resumen]="true"></app-event>
         </li>
       </ul>
     </div>

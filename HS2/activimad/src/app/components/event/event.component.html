@@ -1,8 +1,13 @@
 <div class="row">
-  <article>
+  <article [hidden]="resumen==true">
     <p class="titleEv">{{event.title}}</p>
     <p [hidden]="event.dtstart== ''">Fecha: {{event.dtstart}}</p>
     <p [hidden]="event['event-location']== ''">Lugar: {{event["event-location"]}}</p>
     <p [hidden]="event.description== ''">{{event.description}}</p>
+  </article>
+  <article [hidden]="resumen==false">
+    <p class="titleEv">{{event.title}}</p>
+    <p [hidden]="event.dtstart== ''">{{event.dtstart}}</p>
+    <a class="nav-link" routerLinkActive="active" [routerLink]="['/actividades', event.id]">Leer más ...</a>
   </article>
 </div>

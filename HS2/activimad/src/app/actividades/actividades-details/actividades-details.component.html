@@ -1,0 +1,17 @@
+<div class="card bg-dark">
+  <div class="card-header">
+    <h4 *ngIf="event.title" class="card-title">{{event.title}}</h4>
+  </div>
+  <div class="card-body">
+    <p *ngIf="event.dtstart || event.dtend " class="card-text">{{event.dtstart}} | {{event.dtend}}</p>
+    <p *ngIf="event['event-location']" [hidden]="event['event-location']== ''">Lugar: {{event["event-location"]}}</p>
+    <p>Precio <span *ngIf="event.price === 1">Pago</span><span *ngIf="event.price === 0">Gratuito</span></p>
+    <p *ngIf="event.description" [hidden]="event.description== ''">Descripción: {{event.description}}</p>
+
+    
+  </div>
+  <div class="card-footer text-muted">
+    <p><a href="{{event.link}}" target="_blank">Enlace</a></p>
+    <p><a href="https://www.google.com/maps/search/?api=1&query={{event.location.latitude}},{{event.location.longitude}}">Ubicación</a></p>
+  </div>
+</div>

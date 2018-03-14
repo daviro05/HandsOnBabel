@@ -11,7 +11,7 @@ export class ActivimadService {
   constructor(public http: HttpClient) {
     /* this.urlBase = 'https://goo.gl/9HNjkd'; */
     // tslint:disable-next-line:max-line-length
-   /*  this.urlBase = 'http://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json'; */
+    /*  this.urlBase = 'http://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json'; */
     this.urlBase = URLAPI;
     this.aEventos = [];
   }
@@ -19,11 +19,11 @@ export class ActivimadService {
   getAllEventos() {
     // const aLibros: Array<string>  = [];
     return this.http.get(this.urlBase).toPromise()
-    .then((response: any) => {
-      this.aEventos = response;
-      return this.aEventos;
-    });
-}
+      .then((response: any) => {
+        this.aEventos = response;
+        return this.aEventos;
+      });
+  }
 
   /* getAllEventos() {
     this.aEventos = [];
@@ -35,7 +35,7 @@ export class ActivimadService {
             console.dir(response.items["@graph"]);
             /* response.items.forEach(element => {
               this.aEventos.push(element.title);
-            }); 
+            });
             // result["@graph"].forEach((item)=>(console.log(item.title)));
             return new Promise((resolve, reject) => resolve(this.aEventos));
           }
@@ -44,19 +44,32 @@ export class ActivimadService {
   } */
 
   getNextEvents(limit: number) {
-    return this.http.get(this.urlBase+'?_sort=dtstart&_order=asc&_limit='+limit).toPromise()
-    .then((response: any) => {
-      this.aEventos = response;
-      return this.aEventos;
-    });
+    return this.http.get(this.urlBase + '?_sort=dtstart&_order=asc&_limit=' + limit).toPromise()
+      .then((response: any) => {
+        this.aEventos = response;
+        return this.aEventos;
+      });
   }
 
   getAllEventsContains(text: string) {
-    return this.http.get(this.urlBase+'?q='+text).toPromise()
-    .then((response: any) => {
-      this.aEventos = response;
-      return this.aEventos;
-    });
+    return this.http.get(this.urlBase + '?title_like=' + text).toPromise()
+      .then((response: any) => {
+        this.aEventos = response;
+        return this.aEventos;
+      });
+  }
+
+  getEvento(id: string) {
+    const empty = {};
+    return this.http.get(this.urlBase + '?id=' + id).toPromise()
+      .then((response: any) => {
+        this.aEventos = response;
+        if (this.aEventos) {
+          return this.aEventos[0];
+        } else {
+          return empty;
+        }
+      });
   }
 
 }

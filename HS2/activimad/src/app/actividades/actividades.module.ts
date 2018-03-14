@@ -6,6 +6,7 @@ import { ComponentsModule } from '../components/components.module';
 import { ActividadesRoutingModule } from './actividades-routing.module';
 import { ActividadesComponent } from './actividades.component';
 import { FormsModule } from '@angular/forms';
+import { ActividadesDetailsComponent } from './actividades-details/actividades-details.component';
 
 @NgModule({
   imports: [
@@ -16,11 +17,12 @@ import { FormsModule } from '@angular/forms';
     FormsModule
   ],
   exports: [
-    ActividadesComponent
+    ActividadesComponent,
+    ActividadesDetailsComponent
   ],
   providers: [
     ActivimadService
   ],
-  declarations: [ActividadesComponent]
+  declarations: [ActividadesComponent, ActividadesDetailsComponent]
 })
 export class ActividadesModule { }
