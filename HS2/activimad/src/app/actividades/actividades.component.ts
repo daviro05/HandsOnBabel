@@ -13,7 +13,7 @@ export class ActividadesComponent implements OnInit {
   constructor(public activS: ActivimadService) { }
 
   ngOnInit() {
-    this.search='';
+    this.search = '';
     this.activS.getAllEventos().then(
       response =>  this.aEvents = response
     );

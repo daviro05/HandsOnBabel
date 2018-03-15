@@ -14,10 +14,8 @@ export class FormularioComponent implements OnInit {
   mostrar: boolean;
   etiqueta: string;
   oUsuario: Usuario;
-  @Output() outAddSugerencia: EventEmitter<Usuario>;
 
   constructor(public usuariosService: UsuariosService) {
-   // this.outAddSugerencia = new EventEmitter();
   }
 
   ngOnInit() {

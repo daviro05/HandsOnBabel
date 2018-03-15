@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">
+    <h4 class="card-title">Posts</h4>
+  </div>
+  <div class="card-body">
+    <ul>
+      <li *ngFor="let post of aPosts">
+        <a class="nav-link linkRes" routerLinkActive="active" [routerLink]="['/blog', post.id]">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <p>{{post.nombre}}</p>
+            </div>
+            <div class="panel-body">
+              <p>
+                <span>{{post.comentario}}</span>
+              </p>
+            </div>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

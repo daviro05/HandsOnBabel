@@ -6,6 +6,7 @@ const routes: Routes = [
   { path: 'about', loadChildren: './about/about.module#AboutModule' },
   { path: 'sugerencias', loadChildren: './sugerencias/sugerencias.module#SugerenciasModule' },
   { path: 'actividades', loadChildren: './actividades/actividades.module#ActividadesModule' },
+  { path: 'blog', loadChildren: './blog/blog.module#BlogModule' },
   { path: '', pathMatch: 'full', redirectTo: 'home' }
 ];
 
