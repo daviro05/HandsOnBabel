@@ -11,7 +11,7 @@ import { ActivimadService } from '../../services/activimad.service';
 export class BlogFormComponent implements OnInit {
   @ViewChild('form2') formPost: any;
   oPost: Post;
-  aIdEvents: Array<any>;
+  aEvents: Array<any>;
   @Output() outPost: EventEmitter<Post>;
 
   constructor(public postService: PostService, public activS: ActivimadService) {
@@ -20,10 +20,12 @@ export class BlogFormComponent implements OnInit {
 
   ngOnInit() {
     this.resetFormulario();
+    this.activS.getAllEventos().then(
+      response =>  this.aEvents = response
+    );
   }
 
   enviar() {
-    console.log('Datos enviados');
     this.outPost.emit(this.oPost);
     this.postService.setPosts(this.oPost).then();
     this.resetFormulario();
@@ -31,9 +33,6 @@ export class BlogFormComponent implements OnInit {
 
   private resetFormulario() {
     this.oPost = {nombre: '', email: '', idEvent: '', comentario: ''};
-   /*  this.activS.getAllIds().then(
-      response =>  this.aIdEvents = response
-    ); */
     this.formPost.reset();
   }
 

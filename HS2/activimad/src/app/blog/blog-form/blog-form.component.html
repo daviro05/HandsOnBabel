@@ -33,11 +33,11 @@
     <div class="md-form">
       <i class="fa fa-key prefix grey-text"></i>
       <label for="">ID del evento</label>
-      <select name="eventid" id="eventid">
-        <option *ngFor="let eI of aIdEvents" value="eI">{{eI}}</option>
+      <select name="eventid" id="eventid" [(ngModel)]="oPost.idEvent">
+        <option *ngFor="let event of aEvents" [ngValue]="event.id">{{event.title}}</option>
       </select>
-      <input type="text" id="eventid" name="eventid" class="form-control" placeholder="Indica el ID del evento o en blanco para general"
-        [(ngModel)]="oPost.idEvent">
+      <!-- <input type="text" id="eventid" name="eventid" class="form-control" placeholder="Indica el ID del evento o en blanco para general"
+        [(ngModel)]="oPost.idEvent"> -->
     </div>
 
     <div class="md-form">
