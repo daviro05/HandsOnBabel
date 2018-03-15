@@ -26,8 +26,6 @@ export class PostService {
   }
 
   setPosts(oPost) {
-    console.log('Enviando datos');
-    console.log(oPost);
     return this.http.post(this.sURL, oPost).toPromise();
   }
 

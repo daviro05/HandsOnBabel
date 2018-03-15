@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { ActivimadService } from '../../services/activimad.service';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-actividades-details',
@@ -9,7 +10,8 @@ import { ActivimadService } from '../../services/activimad.service';
 })
 export class ActividadesDetailsComponent implements OnInit {
   event: any;
-  constructor(private route: ActivatedRoute, private activS: ActivimadService) {
+  aComms: Array<any>;
+  constructor(private route: ActivatedRoute, private activS: ActivimadService, private postS: PostService) {
    }
 
   ngOnInit() {
@@ -20,8 +22,12 @@ export class ActividadesDetailsComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     this.activS.getEvento(id).then(
       response =>  {
-        console.dir(response);
         this.event = response;
+      }
+    );
+    this.postS.getPostsFromIdEvent(id).then(
+      response =>  {
+        this.aComms = response;
       }
     );
   }

@@ -1,17 +1,22 @@
 <div class="card bg-dark" >
   <div class="card-header">
-    <h4 class="card-title" (click) = "cambioActv()">{{event.title}}</h4>
+    <h4 class="card-title" (click) = "cambioActv()">{{event?.title}}</h4>
   </div>
   <div class="card-body">
-    <p *ngIf="event.dtstart" class="card-text">{{event.dtstart}} | {{event.dtend}}</p>
-    <p *ngIf="event['event-location']" [hidden]="event['event-location']== ''">Lugar: {{event["event-location"]}}</p>
-    <p>Precio <span *ngIf="event.price === 1">Pago</span><span *ngIf="event.price === 0">Gratuito</span></p>
-    <p *ngIf="event.description" [hidden]="event.description== ''">Descripción: {{event.description}}</p>
-
-    
+    <p [hidden]="!event?.dtstart" class="card-text">{{event?.dtstart}} | {{event?.dtend}}</p>
+    <p [hidden]="event['event-location']==''">Lugar: {{event['event-location']}}</p>
+    <p>Precio <span *ngIf="event?.price === 1">Pago</span><span *ngIf="event?.price === 0">Gratuito</span></p>
+    <p *ngIf="event?.description">Descripción: {{event?.description}}</p>
+    <hr>
+    <p><a href="{{event?.link}}" target="_blank">Enlace</a></p>
+    <p *ngIf="event?.location"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{event?.location?.latitude}},{{event?.location?.longitude}}">Ubicación</a></p>
   </div>
   <div class="card-footer text-muted">
-    <p><a href="{{event.link}}" target="_blank">Enlace</a></p>
-    <p *ngIf="event.location"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query={{event.location.latitude}},{{event.location.longitude}}">Ubicación</a></p>
+    <p class="card-title">Comentarios</p>
+    <ul>
+      <li *ngFor="let com of aComms">
+        <app-blog-coment [coment]="com"></app-blog-coment>
+      </li>
+    </ul>
   </div>
 </div>
