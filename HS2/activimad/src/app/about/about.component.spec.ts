@@ -1,6 +1,10 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { DesarrolladorComponent } from './desarrollador/desarrollador.component';
+import { FormularioComponent } from './formulario/formulario.component';
 import { AboutComponent } from './about.component';
+import { FormsModule } from '@angular/forms';
+import { UsuariosService } from '../services/usuarios.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('AboutComponent', () => {
   let component: AboutComponent;
@@ -8,7 +12,9 @@ describe('AboutComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ AboutComponent ]
+      declarations: [ AboutComponent, DesarrolladorComponent, FormularioComponent ],
+      imports: [FormsModule],
+      providers: [UsuariosService, HttpClient, HttpHandler]
     })
     .compileComponents();
   }));

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ActividadesDetailsComponent } from './actividades-details.component';
+import { BlogComentComponent } from '../../blog/blog-coment/blog-coment.component';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('ActividadesDetailsComponent', () => {
   let component: ActividadesDetailsComponent;
@@ -8,7 +10,8 @@ describe('ActividadesDetailsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ActividadesDetailsComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ ActividadesDetailsComponent, BlogComentComponent ]
     })
     .compileComponents();
   }));
