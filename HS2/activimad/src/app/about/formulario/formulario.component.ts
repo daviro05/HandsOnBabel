@@ -10,6 +10,7 @@ import { UsuariosService } from '../../services/usuarios.service';
 export class FormularioComponent implements OnInit {
 
   @ViewChild('form1') formUsuario: any;
+  formenviado: boolean;
   mostrar: boolean;
   etiqueta: string;
   oUsuario: Usuario;
@@ -42,6 +43,12 @@ export class FormularioComponent implements OnInit {
       this.usuariosService.setUsuarios(this.oUsuario).then();
       this.resetFormulario();
       this.formUsuario.reset();
+
+      this.formenviado = true;
+
+      setTimeout(function() {
+        this.formenviado = false;
+       }.bind(this), 3000);
     }
 
     private resetFormulario() {

@@ -5,6 +5,7 @@ import { ActivimadService } from '../services/activimad.service';
   selector: 'app-home',
   template: `
     <div class="principal home">
+    <h3>Algunas actividades que te pueden interesar</h3>
       <ul>
         <li *ngFor="let eventI of aEvents">
          <app-event [event]="eventI" [resumen]="true"></app-event>
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
   constructor(public activS: ActivimadService) { }
 
   ngOnInit() {
-    this.activS.getAllEventos().then(
+    this.activS.getNextEvents(10, false).then(
       response =>  this.aEvents = response
     );
     /* this.activS.getAllEventos().then((response: any) => this.aEvents = response); */

@@ -33,3 +33,20 @@ a{
     padding-left:1rem;
     padding-bottom:0.5rem;
 }
+
+figure{
+    text-align: center;
+}
+
+img{
+    width: 50%;
+}
+.actv_img{
+    width: 20%;
+    float: left;
+}
+
+.actv_info{
+    width: 80%;
+    float: right
+}

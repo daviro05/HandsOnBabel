@@ -5,6 +5,8 @@
     <form class="formulario" [hidden]="mostrar" #form1="ngForm" (ngSubmit)="enviar()">
         <p class="h2 text-center mb-2">Sugerencias</p>
 
+        <fieldset> 
+            <legend>Datos personales</legend>
         <div class="md-form">
             <i class="fa fa-user prefix grey-text"></i>
             <label for="name">Nombre</label>
@@ -21,7 +23,7 @@
 
         <div class="md-form">
             <i class="fa fa-address-card prefix grey-text"></i>
-            <label for="">Apellidos</label>
+            <label for="apellidos">Apellidos</label>
             <input type="text" id="apellidos" name="apellidos" class="form-control" required minlength="3" placeholder="Indica tu apellido"
                 [(ngModel)]="oUsuario.apellidos" #apellidosState="ngModel">
         </div>
@@ -36,7 +38,7 @@
 
         <div class="md-form">
             <i class="fa fa-envelope prefix grey-text"></i>
-            <label for="">Email</label>
+            <label for="email">Email</label>
             <input type="email" id="email" name="email" class="form-control" required placeholder="Indica tu email" [(ngModel)]="oUsuario.email"
                 #emailState="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
         </div>
@@ -50,24 +52,26 @@
         </div>
 
         <div class="md-form">
-            <fieldset>
-                    <legend><i class="fa fa-transgender prefix grey-text"></i>Sexo</legend>
+                    <label><i class="fa fa-transgender prefix grey-text"></i> Sexo</label><br>
                     <label for="m">Masculino</label>
                     <input type="radio" id="m" name="sexo" class="form-control" name="sexo" value="Masculino" [(ngModel)]="oUsuario.sexo"
                             #sexoSel="ngModel" required>
                     <label for="f">Femenino</label>
                     <input type="radio" id="f" name="sexo" class="form-control" name="sexo" value="Femenino" [(ngModel)]="oUsuario.sexo" #sexoSel="ngModel">
-            </fieldset>
         </div>
 
         <div [hidden]="sexoSel.valid || sexoSel.untouched ">
                 <div class="error-message" [hidden]="!sexoSel.errors?.required">
                     Debes seleccionar un sexo</div>
-            </div>
+        </div>
+        </fieldset>
+
+        <fieldset> 
+                <legend>Tus gustos</legend>
 
         <div>
             <i class="fa fa-star prefix grey-text"></i>
-            <label for="">Preferencias</label>
+            <label>Preferencias</label>
             <div class="form-check">
                 <label class="form-check-label">
                     <input type="checkbox" class="form-check-input"  name="preferencias" [(ngModel)]="oUsuario.preferencias.cultura"> Cultural
@@ -87,10 +91,11 @@
 
         <div class="md-form">
             <i class="fa fa-pencil prefix grey-text"></i>
-            <label for="">Mensaje</label>
-            <textarea type="text" id="" class="form-control md-textarea" name="sugerencia" rows="3" placeholder="Escribe una sugerencia"
+            <label for="mensaje">Mensaje</label>
+            <textarea type="text" id="mensaje" class="form-control md-textarea" name="sugerencia" rows="3" placeholder="Escribe una sugerencia"
             [(ngModel)]="oUsuario.sugerencia"></textarea>
         </div>
+        </fieldset>
 
         <div class="text-center mt-4">
             <button class="btn btn-outline-primary" type="submit" [disabled]="form1.invalid">Enviar
@@ -99,6 +104,9 @@
             <button type="button" class="btn btn-outline-secondary" (click)="btnBorrar()">Borrar
                 <i class="fa fa-eraser ml-2"></i>
             </button>
+            <div *ngIf="formenviado" class="alert alert-primary box-msg" role="alert">
+                <strong>Formulario enviado</strong> Tus datos se han guardado correctamente!
+        </div>
         </div>
     </form>
 </div>

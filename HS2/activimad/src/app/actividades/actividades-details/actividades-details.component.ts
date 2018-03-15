@@ -13,6 +13,10 @@ export class ActividadesDetailsComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.cambioActv();
+  }
+
+  cambioActv() {
     const id = this.route.snapshot.paramMap.get('id');
     this.activS.getEvento(id).then(
       response =>  {
@@ -21,5 +25,4 @@ export class ActividadesDetailsComponent implements OnInit {
       }
     );
   }
-
 }
