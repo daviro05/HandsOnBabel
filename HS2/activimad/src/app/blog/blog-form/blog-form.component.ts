@@ -31,6 +31,10 @@ export class BlogFormComponent implements OnInit {
     this.resetFormulario();
   }
 
+  btnBorrar() {
+    this.formPost.reset();
+  }
+
   private resetFormulario() {
     this.oPost = {nombre: '', email: '', idEvent: '', comentario: ''};
     this.formPost.reset();
