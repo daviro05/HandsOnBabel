@@ -7,6 +7,7 @@ const URLAPI = 'http://localhost:3000/events';
 export class ActivimadService {
   urlBase: string;
   aEventos: Array<any>;
+  opcion: string;
 
   constructor(public http: HttpClient) {
     /* this.urlBase = 'https://goo.gl/9HNjkd'; */
@@ -14,6 +15,7 @@ export class ActivimadService {
     /*  this.urlBase = 'http://datos.madrid.es/egob/catalogo/300107-0-agenda-actividades-eventos.json'; */
     this.urlBase = URLAPI;
     this.aEventos = [];
+
   }
 
   getAllEventos() {
@@ -43,8 +45,13 @@ export class ActivimadService {
       );
   } */
 
-  getNextEvents(limit: number) {
-    return this.http.get(this.urlBase + '?_sort=dtstart&_order=asc&_limit=' + limit).toPromise()
+  getNextEvents(limit: number, ordenado: boolean) {
+    if (ordenado) {
+      this.opcion = '?_sort=dtstart&_order=asc&_limit=';
+    } else {
+      this.opcion = '?_limit=';
+    }
+    return this.http.get(this.urlBase + this.opcion + limit).toPromise()
       .then((response: any) => {
         this.aEventos = response;
         return this.aEventos;
