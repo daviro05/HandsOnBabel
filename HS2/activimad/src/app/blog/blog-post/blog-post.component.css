@@ -1,0 +1,45 @@
+.panel-body p{
+    max-width: 9rem;
+}
+
+card{
+    padding: 0rem;
+}
+
+ul{
+    padding-left: 0rem;
+}
+
+.panel-body{
+    padding: 1rem;
+}
+
+.panel-heading{
+    background: #1e5799; /* Old browsers */
+    background: -moz-linear-gradient(top, #1e5799 0%, #2989d8 50%, #7db9e8 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #1e5799 0%,#2989d8 50%,#7db9e8 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 );
+    padding: 0.2rem 1rem;
+}
+
+a{
+    display:inline-block;
+    color: white;
+    width: 100%;
+}
+
+.panel{
+    border: 1px solid black;
+    margin-bottom: 1rem;
+}
+
+.panel-body span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    max-width: 100%;
+    color: black;
+}
+

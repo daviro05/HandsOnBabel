@@ -72,4 +72,12 @@ export class ActivimadService {
       });
   }
 
+  getAllIds() {
+/*     return this.http.get(this.urlBase + '').toPromise()
+      .then((response: any) => {
+        this.aEventos = response;
+        return this.aEventos;
+      }); */
+  }
+
 }
