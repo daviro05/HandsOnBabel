@@ -54,28 +54,35 @@
                     <legend><i class="fa fa-transgender prefix grey-text"></i>Sexo</legend>
                     <label for="m">Masculino</label>
                     <input type="radio" id="m" name="sexo" class="form-control" name="sexo" value="Masculino" [(ngModel)]="oUsuario.sexo"
-                            #sexoSel="ngModel">
+                            #sexoSel="ngModel" required>
                     <label for="f">Femenino</label>
                     <input type="radio" id="f" name="sexo" class="form-control" name="sexo" value="Femenino" [(ngModel)]="oUsuario.sexo" #sexoSel="ngModel">
             </fieldset>
-           
         </div>
-        <i class="fa fa-star prefix grey-text"></i>
-        <label for="">Preferencias</label>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="checkbox" class="form-check-input"  name="preferencias" [(ngModel)]="oUsuario.preferencias.cultura"> Cultural
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="checkbox" class="form-check-input"  name="preferencias"  [(ngModel)]="oUsuario.preferencias.deportes"> Deportes
-            </label>
-        </div>
-        <div class="form-check">
-            <label class="form-check-label">
-                <input type="checkbox" class="form-check-input"  name="preferencias"  [(ngModel)]="oUsuario.preferencias.aventura"> Aventura
-            </label>
+
+        <div [hidden]="sexoSel.valid || sexoSel.untouched ">
+                <div class="error-message" [hidden]="!sexoSel.errors?.required">
+                    Debes seleccionar un sexo</div>
+            </div>
+
+        <div>
+            <i class="fa fa-star prefix grey-text"></i>
+            <label for="">Preferencias</label>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"  name="preferencias" [(ngModel)]="oUsuario.preferencias.cultura"> Cultural
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"  name="preferencias"  [(ngModel)]="oUsuario.preferencias.deportes"> Deportes
+                </label>
+            </div>
+            <div class="form-check">
+                <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input"  name="preferencias"  [(ngModel)]="oUsuario.preferencias.aventura"> Aventura
+                </label>
+            </div>
         </div>
 
         <div class="md-form">
@@ -86,7 +93,7 @@
         </div>
 
         <div class="text-center mt-4">
-            <button class="btn btn-outline-secondary" type="submit">Enviar
+            <button class="btn btn-outline-primary" type="submit" [disabled]="form1.invalid">Enviar
                 <i class="fa fa-paper-plane-o ml-2"></i>
             </button>
             <button type="button" class="btn btn-outline-secondary" (click)="btnBorrar()">Borrar

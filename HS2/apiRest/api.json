@@ -22286,6 +22286,19 @@
       },
       "sugerencia": "Yo soy deportista, me interesan más actividades de deportes!",
       "id": 5
+    },
+    {
+      "nombre": "Miriam",
+      "apellidos": "Marco",
+      "email": "mmarco@ucm.es",
+      "sexo": "Femenino",
+      "preferencias": {
+        "deportes": true,
+        "cultura": true,
+        "aventura": true
+      },
+      "sugerencia": "Me encantan las actividades",
+      "id": 7
     }
   ]
 }

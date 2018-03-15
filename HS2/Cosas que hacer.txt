@@ -1,8 +1,8 @@
 #### COSAS QUE HAY QUE HACER ####
 
-- Home: Ruleta de actividad aleatoria. Meter contenido sobre actividades en Madrid.
+- Home: Ruleta de actividad aleatoria.
 
-- About: Colocar bien el contenido. Formulario. Meter pattern
+- About: Colocar bien el contenido. En el formulario meter un mensaje de datos enviados.
 
 - Blog: Tipo foro, que se vayan guardando los comentarios, en un json con api_rest con json_server.
 
@@ -18,12 +18,12 @@
 
 - Sugerencias: Se muestran todos los datos que se han introducido en el formulario de sugerencias.
 
+* Validar la aplicación
+
 -----
 
-- Aside con los próximos 5 eventos.
-
-- Servicio que funcione bien
-
-- 
+ HAY UN PROBLEMA AL VER ALGUNAS ACTIVIDADES DESDE LA PÁGINA DE ACTIVIDADES. EN LAS ACTIVIDADES INFERIORES SI SE PULSA
+ EN ALGUNA DE ELLAS LA ACTIVIDAD EXPANDIDA SE ABRE LA PÁGINA DESDE ABAJO QUEDANDO UN HUECO ENTRE EL FOOTER Y EL FINAL 
+ DE LA PÁGINA.
 
 
