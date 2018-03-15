@@ -18,4 +18,8 @@ export class BlogPostComponent implements OnInit {
     );
   }
 
+  newPost(oPost: Post) {
+    this.aPosts.push(oPost);
+  }
+
 }

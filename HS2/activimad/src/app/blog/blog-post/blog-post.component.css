@@ -8,6 +8,7 @@ card{
 
 ul{
     padding-left: 0rem;
+    float:left;
 }
 
 .panel-body{
@@ -41,5 +42,9 @@ a{
     display: inline-block;
     max-width: 100%;
     color: black;
+}
+
+app-blog-form{
+    float: left;
 }
 

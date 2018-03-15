@@ -12,9 +12,11 @@ export class BlogFormComponent implements OnInit {
   @ViewChild('form2') formPost: any;
   oPost: Post;
   aIdEvents: Array<any>;
-  @Output() outAddSugerencia: EventEmitter<Post>;
+  @Output() outPost: EventEmitter<Post>;
 
-  constructor(public postService: PostService, public activS: ActivimadService) {   }
+  constructor(public postService: PostService, public activS: ActivimadService) {
+    this.outPost = new EventEmitter();
+     }
 
   ngOnInit() {
     this.resetFormulario();
@@ -22,6 +24,7 @@ export class BlogFormComponent implements OnInit {
 
   enviar() {
     console.log('Datos enviados');
+    this.outPost.emit(this.oPost);
     this.postService.setPosts(this.oPost).then();
     this.resetFormulario();
   }
