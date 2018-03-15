@@ -2,7 +2,7 @@
 
 - Home: Ruleta de actividad aleatoria.
 
-- About: Colocar bien el contenido. En el formulario meter un mensaje de datos enviados.
+- About: Funcionalidad botón Contar historia. 
 
 - Blog: Tipo foro, que se vayan guardando los comentarios, en un json con api_rest con json_server.
 
@@ -16,14 +16,4 @@
 
 - Todos los eventos: En la pagina ver las distintas categorias, paginacion, etc.
 
-- Sugerencias: Se muestran todos los datos que se han introducido en el formulario de sugerencias.
-
 * Validar la aplicación
-
------
-
- HAY UN PROBLEMA AL VER ALGUNAS ACTIVIDADES DESDE LA PÁGINA DE ACTIVIDADES. EN LAS ACTIVIDADES INFERIORES SI SE PULSA
- EN ALGUNA DE ELLAS LA ACTIVIDAD EXPANDIDA SE ABRE LA PÁGINA DESDE ABAJO QUEDANDO UN HUECO ENTRE EL FOOTER Y EL FINAL 
- DE LA PÁGINA.
-
-

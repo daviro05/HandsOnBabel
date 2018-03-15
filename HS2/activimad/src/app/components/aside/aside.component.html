@@ -1,6 +1,6 @@
 <div class="panel panel-default">
-  <div class="panel-heading">{{title}}</div>
-  <div class="panel-body">
+  <div class="panel-heading">{{title}} <input type="checkbox" name="muestra" checked="checked" (click)= "muestraAside()"></div>
+  <div class="panel-body check-element animate-show-hide" *ngIf="muestra">
     <p>
       <button class="btn btn-outline-info" (click) = "getNext5Events()">5</button>
       <button class="btn btn-outline-info" (click) = "getNext10Events()">10</button>
