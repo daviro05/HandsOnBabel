@@ -3,7 +3,7 @@
     <h4 class="card-title">Posts</h4>
   </div>
   <div class="card-body">
-    <ul class="col-6" (outPost)="newPost($event)">
+    <ul class="col-12" (outPost)="newPost($event)">
       <li *ngFor="let post of aPosts">
         <a class="nav-link linkRes" routerLinkActive="active" [routerLink]="['/blog', post.id]">
           <div class="panel panel-default">

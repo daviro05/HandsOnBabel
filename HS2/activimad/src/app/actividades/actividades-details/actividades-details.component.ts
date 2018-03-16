@@ -12,6 +12,7 @@ export class ActividadesDetailsComponent implements OnInit {
   event: any;
   aComms: Array<any>;
   constructor(private route: ActivatedRoute, private activS: ActivimadService, private postS: PostService) {
+    this.event = {};
    }
 
   ngOnInit() {

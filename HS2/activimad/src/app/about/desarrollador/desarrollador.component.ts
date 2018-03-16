@@ -12,7 +12,9 @@ export class DesarrolladorComponent implements OnInit {
   imagen: string;
   datos: Array<any>;
 
-  constructor() { }
+  constructor() {
+    this.idD = 0;
+   }
 
   ngOnInit() {
     this.datos = [

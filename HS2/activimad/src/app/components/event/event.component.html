@@ -2,7 +2,7 @@
   <a [hidden]="resumen==true" class="nav-link" routerLinkActive="active" [routerLink]="['/actividades', event.id]">
     <article >
       <p class="titleEv">{{event.title}}</p>
-      <p [hidden]="event?.dtstart== ''">Fecha: {{event.dtstart}}</p>
+      <p [hidden]="event?.dtstart== ''">Fecha: {{event?.dtstart}}</p>
       <p [hidden]="event['event-location']== ''">Lugar: {{event["event-location"]}}</p>
       <p [hidden]="event?.description== ''">{{event.description}}</p>
     </article>
@@ -13,7 +13,7 @@
       <figure><img [src]="ruta"></figure>
     </div>
     <div class="actv_info">
-      <p [hidden]="event?.dtstart== ''">{{event.dtstart}}</p>
+      <p [hidden]="event?.dtstart== ''">{{event?.dtstart}}</p>
       <a class="nav-link linkRes" routerLinkActive="active" [routerLink]="['/actividades', event?.id]">Leer más ...</a>
     </div>
   </article>

@@ -9,7 +9,6 @@ card{
 
 ul{
     padding-left: 0rem;
-    float:left;
     height: 300px;
     overflow-x: auto;
 }
@@ -59,9 +58,5 @@ a{
     display: inline-block;
     max-width: 100%;
     color: black;
-}
-
-app-blog-form{
-    float: left;
 }
 

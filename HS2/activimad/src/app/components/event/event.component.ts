@@ -11,7 +11,11 @@ export class EventComponent implements OnInit {
   ruta: string;
   imagenes: string;
 
-  constructor() { }
+  constructor() {
+    this.event = {};
+    this.event.dtstart = '';
+    this.event.dtend = '';
+   }
 
   ngOnInit() {
     this.imagenes = './assets/fotos/';
