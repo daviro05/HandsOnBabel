@@ -1,11 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
 
 import { ActivimadService } from './activimad.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('ActivimadService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [ActivimadService]
+      providers: [ActivimadService,
+      HttpClient,
+    HttpHandler]
     });
   });
 

@@ -5,4 +5,9 @@
 
 .card h4{
     font-size: 2rem;
+    color: skyblue;
+}
+
+li{
+    margin-bottom: 1rem;
 }

@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SugerenciasComponent } from './sugerencias.component';
+import { UsuariosService } from '../services/usuarios.service';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('SugerenciasComponent', () => {
   let component: SugerenciasComponent;
@@ -8,7 +10,8 @@ describe('SugerenciasComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SugerenciasComponent ]
+      declarations: [ SugerenciasComponent ],
+      providers: [UsuariosService, HttpClient, HttpHandler]
     })
     .compileComponents();
   }));

@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { PostService } from '../services/post.service';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { ActivimadService } from '../services/activimad.service';
+import { BlogComentComponent } from './blog-coment/blog-coment.component';
 
 @NgModule({
   imports: [
@@ -18,12 +19,13 @@ import { ActivimadService } from '../services/activimad.service';
   ],
   exports: [
     BlogComponent,
-    BlogDetailsComponent
+    BlogDetailsComponent,
+    BlogComentComponent
   ],
   providers: [
     PostService,
     ActivimadService
   ],
-  declarations: [BlogComponent, BlogPostComponent, BlogFormComponent, BlogDetailsComponent]
+  declarations: [BlogComponent, BlogPostComponent, BlogFormComponent, BlogDetailsComponent, BlogComentComponent]
 })
 export class BlogModule { }

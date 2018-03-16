@@ -7,6 +7,8 @@ import { ActividadesRoutingModule } from './actividades-routing.module';
 import { ActividadesComponent } from './actividades.component';
 import { FormsModule } from '@angular/forms';
 import { ActividadesDetailsComponent } from './actividades-details/actividades-details.component';
+import { PostService } from '../services/post.service';
+import { BlogModule } from '../blog/blog.module';
 
 @NgModule({
   imports: [
@@ -14,14 +16,16 @@ import { ActividadesDetailsComponent } from './actividades-details/actividades-d
     ActividadesRoutingModule,
     HttpClientModule,
     ComponentsModule,
-    FormsModule
+    FormsModule,
+    BlogModule
   ],
   exports: [
     ActividadesComponent,
     ActividadesDetailsComponent
   ],
   providers: [
-    ActivimadService
+    ActivimadService,
+    PostService
   ],
   declarations: [ActividadesComponent, ActividadesDetailsComponent]
 })

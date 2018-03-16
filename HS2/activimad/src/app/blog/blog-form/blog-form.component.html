@@ -1,6 +1,8 @@
 <div class="container container-fluid">
   <form class="formulario" #form2="ngForm" (ngSubmit)="enviar()">
 
+    <fieldset>
+      <legend>Comentario para el Blog</legend>
     <div class="md-form">
       <i class="fa fa-user prefix grey-text"></i>
       <label for="name">Nombre</label>
@@ -33,11 +35,11 @@
     <div class="md-form">
       <i class="fa fa-key prefix grey-text"></i>
       <label for="">ID del evento</label>
-      <select name="eventid" id="eventid">
-        <option *ngFor="let eI of aIdEvents" value="eI">{{eI}}</option>
+      <select name="eventid" id="eventid" required [(ngModel)]="oPost.idEvent">
+        <option *ngFor="let event of aEvents" [ngValue]="event.id">{{event.title}}</option>
       </select>
-      <input type="text" id="eventid" name="eventid" class="form-control" placeholder="Indica el ID del evento o en blanco para general"
-        [(ngModel)]="oPost.idEvent">
+      <!-- <input type="text" id="eventid" name="eventid" class="form-control" placeholder="Indica el ID del evento o en blanco para general"
+        [(ngModel)]="oPost.idEvent"> -->
     </div>
 
     <div class="md-form">
@@ -46,6 +48,7 @@
       <textarea type="text" id="" class="form-control md-textarea" name="comentario" rows="3" placeholder="Escribe un comentario"
         [(ngModel)]="oPost.comentario"></textarea>
     </div>
+    </fieldset>
 
     <div class="text-center mt-4">
       <button class="btn btn-outline-primary" type="submit" [disabled]="form2.invalid">Enviar
