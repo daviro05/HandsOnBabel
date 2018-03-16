@@ -23,6 +23,8 @@ export class ActividadesDetailsComponent implements OnInit {
     this.activS.getEvento(id).then(
       response =>  {
         this.event = response;
+        this.event.dtstart = this.event.dtstart.substring(0, this.event.dtstart.length - 5);
+        this.event.dtend = this.event.dtend.substring(0, this.event.dtend.length - 5);
       }
     );
     this.postS.getPostsFromIdEvent(id).then(
