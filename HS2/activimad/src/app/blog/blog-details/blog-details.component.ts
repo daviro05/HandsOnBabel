@@ -9,9 +9,6 @@ import { PostService } from '../../services/post.service';
 })
 export class BlogDetailsComponent implements OnInit {
   post: any;
-  name: string;
-  email: string;
-  comment: string;
   constructor(private route: ActivatedRoute, private postS: PostService) { }
 
   ngOnInit() {
@@ -19,9 +16,6 @@ export class BlogDetailsComponent implements OnInit {
     this.postS.getPost(id).then(
       response =>  {
         this.post = response;
-        this.name = this.post[`nombre`];
-        this.email = this.post[`email`];
-        this.comment = this.post[`comentario`];
       }
     );
   }

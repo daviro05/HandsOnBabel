@@ -19,7 +19,7 @@
 
     <div class="md-form">
       <i class="fa fa-envelope prefix grey-text"></i>
-      <label for="">Email</label>
+      <label for="email">Email</label>
       <input type="email" id="email" name="email" class="form-control" required placeholder="Indica tu email" [(ngModel)]="oPost.email"
         #emailState="ngModel" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
     </div>
@@ -34,7 +34,7 @@
 
     <div class="md-form">
       <i class="fa fa-key prefix grey-text"></i>
-      <label for="">ID del evento</label>
+      <label for="eventid">Evento</label>
       <select name="eventid" id="eventid" required [(ngModel)]="oPost.idEvent">
         <option *ngFor="let event of aEvents" [ngValue]="event.id">{{event.title}}</option>
       </select>
@@ -44,8 +44,8 @@
 
     <div class="md-form">
       <i class="fa fa-pencil prefix grey-text"></i>
-      <label for="">Comentario</label>
-      <textarea type="text" id="" class="form-control md-textarea" name="comentario" rows="3" placeholder="Escribe un comentario"
+      <label for="comentario">Comentario</label>
+      <textarea type="text" id="comentario" class="form-control md-textarea" name="comentario" rows="3" placeholder="Escribe un comentario"
         [(ngModel)]="oPost.comentario"></textarea>
     </div>
     </fieldset>
