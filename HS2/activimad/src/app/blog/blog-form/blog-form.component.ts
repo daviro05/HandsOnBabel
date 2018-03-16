@@ -26,8 +26,8 @@ export class BlogFormComponent implements OnInit {
   }
 
   enviar() {
-    this.outPost.emit(this.oPost);
     this.postService.setPosts(this.oPost).then();
+    this.outPost.emit(this.oPost);
     this.resetFormulario();
   }
 
@@ -36,7 +36,7 @@ export class BlogFormComponent implements OnInit {
   }
 
   private resetFormulario() {
-    this.oPost = {nombre: '', email: '', idEvent: '', comentario: ''};
+    this.oPost = {nombre: '', email: '', idEvent: '', comentario: '', id: undefined};
     this.formPost.reset();
   }
 

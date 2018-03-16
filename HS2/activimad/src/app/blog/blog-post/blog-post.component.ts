@@ -13,6 +13,10 @@ export class BlogPostComponent implements OnInit {
   constructor(public postService: PostService) { }
 
   ngOnInit() {
+    this.getPosts();
+  }
+
+  getPosts() {
     this.postService.getAllPosts().then(
       response =>  {
         this.aPosts = response;
@@ -26,7 +30,9 @@ export class BlogPostComponent implements OnInit {
   }
 
   newPost(oPost: Post) {
+    oPost.id = this.aPosts[0].id + 1;
+    console.log(oPost.id);
     this.aPosts.unshift(oPost);
-  }
+    }
 
 }
