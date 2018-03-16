@@ -21,8 +21,12 @@ export class BlogPostComponent implements OnInit {
       response =>  {
         this.aPosts = response;
         this.aPosts.sort((left, right): number => {
-          if (left.id > right.id) return -1;
-          if (left.id < right.id) return 1;
+          if (left.id > right.id) {
+            return -1;
+          }
+          if (left.id < right.id) {
+            return 1;
+          }
           return 0;
         });
       }
