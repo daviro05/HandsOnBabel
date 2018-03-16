@@ -21,8 +21,12 @@ export class BlogPostComponent implements OnInit {
       response =>  {
         this.aPosts = response;
         this.aPosts.sort((left, right): number => {
-          if (left.id > right.id) return -1;
-          if (left.id < right.id) return 1;
+          if (left.id > right.id) {
+            return -1;
+          }
+          if (left.id < right.id) {
+            return 1;
+          }
           return 0;
         });
       }
@@ -30,8 +34,9 @@ export class BlogPostComponent implements OnInit {
   }
 
   newPost(oPost: Post) {
-    // this.aPosts.unshift(oPost);
-    this.cargarPost();
-  }
+    oPost.id = this.aPosts[0].id + 1;
+    console.log(oPost.id);
+    this.aPosts.unshift(oPost);
+    }
 
 }
