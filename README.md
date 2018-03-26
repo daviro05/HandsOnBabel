@@ -5,6 +5,8 @@ Hands on realizados en el BabelCamp 2018
 
 * Angular 5
 
+* Node JS
+
 @authors: David Rodríguez y Carlos López
 
 Descripción de los proyectos:

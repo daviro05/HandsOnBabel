@@ -1,0 +1,33 @@
+Collection: Tweets
+Collection: Users
+
+// CACHE
+LISTADO DE Tweets (CUIDADO CON EL TAMAÑO, BUSQUEDA DE TEXTO, POR USUARIO)
+
+
+INFORMACION DE UN USUARIO
+TODOS LOS USUARIOS QUE HAN RT UN TWEET ( CUIDADO CON DEVOLVER TODOS LOS CAMPOS );
+
+
+Tweet {
+  text,
+  user_id,
+}
+
+User {
+  name,
+  tweet_id,
+}
+
+// EN CASO DE BLOQUEO, USAR MOCKS
+function search(search) {
+  //TODO busqueda en mongo
+  new Promise((resolve) => {
+    resolve([
+      { text: 'Hola', user_id: '101029383jf'}
+    ]);
+  });
+}
+
+// librería CACHE
+Para sustituirla facil, tener dos metodos get y set que usen promesas

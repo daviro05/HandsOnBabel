@@ -7,6 +7,10 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
+// Conexion con la BBDD de MongoDB
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/nodetweet');
+
 var app = express();
 
 // view engine setup
