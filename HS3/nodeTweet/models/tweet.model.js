@@ -9,8 +9,16 @@ const Tweet = mongoose.model('Tweet',
     },
 );
 
-function getAllTweets(lim,page) {
-    return Tweet.find({}).skip(lim*page).limit(lim);
+function getAllTweets(lim,page, text,user) {
+    let searchObj = {}
+    if(user){
+        searchObj.user_id = user;
+    }
+    if(text){
+        searchObj.text = {$regex : `.*${text}.*`};
+    }
+    console.log(searchObj);
+    return Tweet.find(searchObj).skip(lim*page).limit(lim);
 }
 
 function getRetweets(id) {
