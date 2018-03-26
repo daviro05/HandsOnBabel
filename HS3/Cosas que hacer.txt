@@ -5,8 +5,8 @@ Collection: Users
 LISTADO DE Tweets (CUIDADO CON EL TAMAÑO, BUSQUEDA DE TEXTO, POR USUARIO)
 
 
-INFORMACION DE UN USUARIO
-TODOS LOS USUARIOS QUE HAN RT UN TWEET ( CUIDADO CON DEVOLVER TODOS LOS CAMPOS );
+INFORMACION DE UN USUARIO x 
+TODOS LOS USUARIOS QUE HAN RT UN TWEET ( CUIDADO CON DEVOLVER TODOS LOS CAMPOS ); x menos lo del cuidado
 
 
 Tweet {
@@ -31,3 +31,9 @@ function search(search) {
 
 // librería CACHE
 Para sustituirla facil, tener dos metodos get y set que usen promesas
+
+
+Faltaría
+---------
+CACHE cuando hagamos GET /tweets
+Búsqueda de tweets por nombre e id 
