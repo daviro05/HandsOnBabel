@@ -3,3 +3,5 @@
 - About: Funcionalidad botón Contar historia. 
 
 - Todos los eventos: En la pagina ver las distintas categorias, paginacion, etc.
+
+
