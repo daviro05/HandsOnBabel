@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const APIError = require('../lib/apierror');
 
 const User = mongoose.model('User', { // El name corresponde con la coleccion.
   id: String,
@@ -10,8 +11,15 @@ const User = mongoose.model('User', { // El name corresponde con la coleccion.
 );
 
 
-function getUser(id){
-  return User.find({id: id});
+function getUser(id) {
+  return new Promise((resolve, reject) => {
+    let user = User.findOne({ id: id }).then((existUser) => {
+    if(existUser){
+      resolve(user);
+    }
+    reject(new APIError('El usuario no existe'));
+  });
+  });
 }
 
 module.exports = {
