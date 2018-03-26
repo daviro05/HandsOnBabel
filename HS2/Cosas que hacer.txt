@@ -1,19 +1,5 @@
 #### COSAS QUE HAY QUE HACER ####
 
-- Home: Ruleta de actividad aleatoria.
-
 - About: Funcionalidad botón Contar historia. 
 
-- Blog: Tipo foro, que se vayan guardando los comentarios, en un json con api_rest con json_server.
-
-{
-    - un formulario para incluir nuevas entradas
-    - un lista de las entradas disponibles, con algunos de sus campos (Por ejemplo en Home)
-    - la posibilidad de acceder a la información completa de una entrada, cargando una nueva
-    "página"  (Ver información expandida)
-
-}
-
 - Todos los eventos: En la pagina ver las distintas categorias, paginacion, etc.
-
-* Validar la aplicación
