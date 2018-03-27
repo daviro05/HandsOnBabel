@@ -5,7 +5,6 @@ module.exports = [
         "user_id": "1",
         "users": [
             {
-                "_id": ObjectId("5ab9ef137229c80ec6474b13"),
                 "id": "1",
                 "name": "carlos",
                 "description": "hola soy carlos",
@@ -20,7 +19,6 @@ module.exports = [
         "user_id": "2",
         "users": [
             {
-                "_id": ObjectId("5ab9ef887229c80ec6474b19"),
                 "id": "2",
                 "name": "david",
                 "description": "hola soy david",
@@ -28,7 +26,6 @@ module.exports = [
                 "statuses_count": 4
             },
             {
-                "_id": ObjectId("5ab9ef137229c80ec6474b13"),
                 "id": "1",
                 "name": "carlos",
                 "description": "hola soy carlos",
@@ -43,7 +40,6 @@ module.exports = [
         "user_id": "3",
         "users": [
             {
-                "_id": ObjectId("5ab9efa97229c80ec6474b1c"),
                 "id": "3",
                 "name": "loren",
                 "description": "hola soy loren",
@@ -51,7 +47,6 @@ module.exports = [
                 "statuses_count": 6
             },
             {
-                "_id": ObjectId("5ab9ef887229c80ec6474b19"),
                 "id": "2",
                 "name": "david",
                 "description": "hola soy david",
@@ -59,7 +54,6 @@ module.exports = [
                 "statuses_count": 4
             },
             {
-                "_id": ObjectId("5ab9ef137229c80ec6474b13"),
                 "id": "1",
                 "name": "carlos",
                 "description": "hola soy carlos",

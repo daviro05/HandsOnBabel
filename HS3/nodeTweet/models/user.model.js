@@ -14,6 +14,11 @@ function getUser(id) {
     return User.findOne({ id: id });
 }
 
+function getAllUsers(){
+    return User.find({});
+}
+
 module.exports = {
   getUser,
+  getAllUsers,
 }

@@ -2,6 +2,23 @@ var express = require('express');
 var router = express.Router();
 
 const APIError = require('../lib/apierror');
+const libCache = require('../lib/cache');
+
+
+// Funcion para obtener datos de la cache para el listado de los tweets
+
+
+function getCacheTweet(req, res, next) {
+    libCache.getCache()
+      .then((resultado) => {
+        if (resultado) {
+          console.log('cache');
+          return res.json(resultado);
+        }
+        return next();
+      });
+  }
+
 
 const tweetController = require('../controllers/tweet.controller');
 
@@ -36,6 +53,27 @@ router.route('/')
   })
   .catch(console.error);
 });
+
+
+/* router.route('/')
+  .get(
+    getCachePackage,
+    (req, res, next) => {
+      packageCtrl.get(req.params.name)
+        .then((data) => {
+          console.log('data', data);
+          req.bbcache = data;
+          next();
+        })
+        .catch(error => next(error));
+    },
+    (req, res, next) => {
+      console.log('req.cache', req.bbcache);
+      libCache.saveCache(req.bbcache)
+        .then(() => res.json(req.bbcache))
+        .catch(error => next(error));
+    },
+  ); */
 
 
 

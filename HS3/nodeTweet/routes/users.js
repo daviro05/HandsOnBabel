@@ -18,6 +18,16 @@ router.route('/:id')
   .catch(console.error);
 });
 
+router.route('/')
+.get(function(req, res, next) {
+  return userController.getAllUsers()
+  .then((data) => {
+    if(data){
+      return res.json(data);
+    }
+  })
+  .catch(console.error);
+});
 
 
 module.exports = router;
