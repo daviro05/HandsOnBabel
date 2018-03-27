@@ -66,30 +66,4 @@ router.route('/')
     );
 
 
-/* router.route('/')
-  .get(
-    getCachePackage,
-    (req, res, next) => {
-      packageCtrl.get(req.params.name)
-        .then((data) => {
-          console.log('data', data);
-          req.bbcache = data;
-          next();
-        })
-        .catch(error => next(error));
-    },
-    (req, res, next) => {
-      console.log('req.cache', req.bbcache);
-      libCache.saveCache(req.bbcache)
-        .then(() => res.json(req.bbcache))
-        .catch(error => next(error));
-    },
-  ); */
-
-
-
-
-
-
-
 module.exports = router;
