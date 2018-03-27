@@ -17,7 +17,6 @@ function getAllTweets(lim,page, text,user) {
     if(text){
         searchObj.text = {$regex : `.*${text}.*`};
     }
-    console.log(searchObj);
     return Tweet.find(searchObj).skip(lim*page).limit(lim);
 }
 
