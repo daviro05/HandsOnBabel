@@ -5,8 +5,6 @@ const desarrollo = process.env.DEV;
 let coleccion = "Tweet"
 desarrollo ? coleccion = "Tweet" : coleccion = "TweetsAPI";
 
-console.log(process.env.DEV);
-
 const Tweet = mongoose.model(coleccion,
     { // El name corresponde con la coleccion.
         id: String,
@@ -27,7 +25,11 @@ function getAllTweets(lim,page, text,user) {
     return Tweet.find(searchObj).skip(lim*page).limit(lim);
 }
 
-function getRetweets(id) {
+function getTweet(id) {
+    return Tweet.find({id_str: id});
+}
+
+function getRetweeters(id) {
     return Tweet.aggregate([
         {"$match": {"id": {"$eq": id}}},
         {"$unwind": "$users"},
@@ -45,5 +47,6 @@ function getRetweets(id) {
 
 module.exports = {
     getAllTweets,
-    getRetweets,
+    getRetweeters,
+    getTweet,
 }

@@ -4,11 +4,16 @@ function getAllTweets(lim,page, text, user) {
     return tweetModel.getAllTweets(lim,page, text, user);
 }
 
-function getRetweets(id) {
-    return tweetModel.getRetweets(id);
+function getTweet(id) {
+    return tweetModel.getTweet(id);
+}
+
+function getRetweeters(id) {
+    return tweetModel.getRetweeters(id);
 }
 
 module.exports = {
     getAllTweets,
-    getRetweets,
+    getRetweeters,
+    getTweet,
   };

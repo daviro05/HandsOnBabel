@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 
-const User = mongoose.model('User', { // El name corresponde con la coleccion.
+const desarrollo = process.env.DEV;
+let coleccion = "User"
+desarrollo ? coleccion = "User" : coleccion = "UsersAPI";
+
+const User = mongoose.model(coleccion, { // El name corresponde con la coleccion.
   id: String,
   name: String,
   description: String,
