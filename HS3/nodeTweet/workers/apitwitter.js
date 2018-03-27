@@ -22,19 +22,21 @@ const User = mongoose.model('UsersApi',
         statuses_count: Number,
     });
 
-/* const client = new Twitter({
+//DAVID
+const client = new Twitter({
     consumer_key: "asRcZ4icN3zHbzr8eEzze0SrD",
     consumer_secret: "YbBLNvTuAwX21vG13qx8D80f2ioXsSnsiNbgC2Kwh3LjcVeAGw",
     access_token_key: "412317152-viVlZiZhlg54vZNeQSnLCUW6ZnVQIQThfdzbcA91",
     access_token_secret: "dQjeZVA9jZYleqrZiNe3fqnDLeakrtkz2BwV4tES2fjQG"
-}); */
+});
 
-const client = new Twitter({
+//CARLOS
+/* const client = new Twitter({
     consumer_key: "qKRqYxvy5Tzk2M85mAL0akvr6",
     consumer_secret: "JStIxsU9kfBNSffn6NIkQmbc2EwtpKsdpOy7u1EAmHZRoywt9s",
     access_token_key: "2617008931-suJ9nVCdLMBHTomiDMWWZcbbtBDEZmse0w0ORWE",
     access_token_secret: "CSwZgQnmuWnO4zhZHKilVVA0Z2NyYXFjOLgFmaZUNfPVb"
-});
+}); */
 
 client.stream('statuses/filter', { track: 'hola', language: 'es' }, function (stream) {
     stream.on('data', function (tweet) {
