@@ -1,8 +1,9 @@
 const Twitter = require('twitter');
 
 const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/nodetweet');
 
-const Tweet = mongoose.model('TweetsAPI',
+const Tweet = mongoose.model('TweetsApi',
     {   id_str: String,
         text: String,
         user_id: String,
@@ -20,8 +21,11 @@ access_token_secret: "dQjeZVA9jZYleqrZiNe3fqnDLeakrtkz2BwV4tES2fjQG"
 
 client.stream('statuses/filter', { track: 'hola', language: 'es'}, function (stream) {
 stream.on('data', function (tweet) {
-    Tweet(tweet).save();
-console.log(tweet.text);
+        //console.log(tweet.user.screen_name);
+        var TwitterData = new Tweet(tweet); // create object 
+        TwitterData.save(); // save data to DB
+        //console.log(tweet);
+
 });
 
 stream.on('error', function (error) {
