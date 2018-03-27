@@ -1,8 +1,11 @@
 const mongoose = require('mongoose');
 
+
 const desarrollo = process.env.DEV;
 let coleccion = "Tweet"
 desarrollo ? coleccion = "Tweet" : coleccion = "TweetsAPI";
+
+console.log(process.env.DEV);
 
 const Tweet = mongoose.model(coleccion,
     { // El name corresponde con la coleccion.
