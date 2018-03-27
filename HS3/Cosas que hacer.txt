@@ -38,4 +38,8 @@ Para sustituirla facil, tener dos metodos get y set que usen promesas
 Faltaría
 ---------
 CACHE cuando hagamos GET /tweets
-Búsqueda de tweets por nombre e id 
+
+
+  .---------------------------------------.
+  . LAS RUTAS DE MÁS A MENOS RESTRICTIVAS .
+  .---------------------------------------.

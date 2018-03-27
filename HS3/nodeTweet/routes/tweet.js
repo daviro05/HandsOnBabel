@@ -35,7 +35,7 @@ router.route('/search')
   .catch(console.error);
 });
 
-router.route('/:id')
+router.route('/:id/users')
 .get(function(req, res, next) {
   return tweetController.getRetweets(req.params.id)
   .then((data) => {
