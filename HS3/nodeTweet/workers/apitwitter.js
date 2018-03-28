@@ -45,12 +45,14 @@ client.stream('statuses/filter', { track: 'hola', language: 'es' }, function (st
         //console.log(tweet);
         /* let retweeters = [];
         console.log('idTweet', tweet.id_str);
-        console.log(typeof tweet.id_str);
-        client.get('statuses/retweeters/ids', {id: tweet.id_str, count: 10, stringify_ids: 'true'})
+        console.log(typeof tweet.id_str);*/
+        console.log(typeof TwitterData.id);
+
+        client.get('statuses/retweeters/ids', {id: TwitterData.id, cursor: 0, stringify_ids: 'true'})
         .then(data => {
-            console.log(data.ids);
+            console.log(data);
         })
-        .catch(error => console.error(error)); */
+        .catch(error => console.error(error));
 
         /* TwitterData.users = retweeters; */
         /* console.log(TwitterData.users); */
