@@ -5,10 +5,10 @@ mongoose.connect('mongodb://localhost/nodetweet');
 
 const Tweet = mongoose.model('TweetsApi',
     {
-        id_str: String,
+        id: String,
         text: String,
         user: Object,
-        users: Array,
+        /* users: Array, */
     },
 );
 
