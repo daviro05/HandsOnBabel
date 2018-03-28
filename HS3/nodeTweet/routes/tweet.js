@@ -33,8 +33,6 @@ router.route('/search')
     });
 
 
-
-
 router.route('/:id/users')
     .get(function (req, res, next) {
         return tweetController.getRetweeters(req.params.id)
@@ -64,7 +62,10 @@ router.route('/:id')
     .get(function (req, res, next) {
         return tweetController.getTweet(req.params.id)
             .then((data) => {
-                return res.json(data);
+                if(data){
+                    return res.json(data);
+                }
+                next(new APIError("El tweet no existe"));
             })
             .catch(console.error);
     });

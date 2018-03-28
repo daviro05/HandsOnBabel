@@ -6,8 +6,11 @@ mongoose.connect('mongodb://localhost/nodetweet');
 const Tweet = mongoose.model('TweetsApi',
     {
         id: String,
+        name: String,
         text: String,
         user: Object,
+        retweeted_status: {},
+
         /* users: Array, */
     },
 );
@@ -46,13 +49,13 @@ client.stream('statuses/filter', { track: 'hola', language: 'es' }, function (st
         /* let retweeters = [];
         console.log('idTweet', tweet.id_str);
         console.log(typeof tweet.id_str);*/
-        console.log(typeof TwitterData.id);
+        console.log(TwitterData.id);
 
-        client.get('statuses/retweeters/ids', {id: TwitterData.id, cursor: 0, stringify_ids: 'true'})
+       /*  client.get('statuses/retweeters/ids', {id: TwitterData.id, cursor: 0, stringify_ids: 'true'})
         .then(data => {
             console.log(data);
         })
-        .catch(error => console.error(error));
+        .catch(error => console.error(error)); */
 
         /* TwitterData.users = retweeters; */
         /* console.log(TwitterData.users); */

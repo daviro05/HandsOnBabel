@@ -30,7 +30,15 @@ function getTweet(id) {
 }
 
 function getRetweeters(id) {
+    // Para la API
+
     return Tweet.aggregate([
+        {"$match": {"$expr": {"$eq": ["$retweeted_status.id_str", id]}}},
+        {"$project": { "_id": "$user"}}
+    ]);
+
+    // Local
+    /* return Tweet.aggregate([
         {"$match": {"id": {"$eq": id}}},
         {"$unwind": "$users"},
         {"$match": {"$expr": {"$ne": ["$user_id", "$users.id"]}}},
@@ -42,7 +50,7 @@ function getRetweeters(id) {
                "url": "$users.url",
                "statuses_count": "$users.statuses_count"
         }}
-    ]);
+    ]); */
 }
 
 module.exports = {
