@@ -26,7 +26,7 @@ function getAllTweets(lim,page, text,user) {
 }
 
 function getTweet(id) {
-    return Tweet.find({id_str: id});
+    return Tweet.findOne({id_str: id});
 }
 
 function getRetweeters(id) {

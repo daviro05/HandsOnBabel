@@ -6,9 +6,8 @@ mongoose.connect('mongodb://localhost/nodetweet');
 const Tweet = mongoose.model('TweetsApi',
     {
         id_str: String,
-        current_user_retweet: Object,
         text: String,
-        user_id: String,
+        user: Object,
         users: Array,
     },
 );

@@ -44,6 +44,24 @@ router.route('/:id/users')
             .catch(console.error);
     });
 
+router.route('/:id/user')
+    .get(function (req, res, next) {
+        return tweetController.getTweet(req.params.id)
+            .then((data) => {
+                console.log(data.id_str);
+                console.log(typeof data);
+                let obj = {};
+                /* let obj = {
+                    id_str: data.user.id_str,
+                    name: data.user.name,
+                    description: data.user.description,
+                    location: data.user.location,
+                } */
+                return res.json(obj);
+            })
+            .catch(console.error);
+    });
+
 router.route('/:id')
     .get(function (req, res, next) {
         return tweetController.getTweet(req.params.id)
