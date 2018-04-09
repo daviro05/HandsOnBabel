@@ -1,0 +1,36 @@
+
+Para arrancar el proyecto:
+
+http-server dentro de la carpeta /dist/
+
+npm run build:watch en la raiz del proyecto HS4     (Para la transpilación de ficheros)
+
+
+He creado la estructura básica:
+
+app: Donde meteremos los archivos .js
+assets: Para las imagenes, sonidos, videos, etc
+paginas: Las paginas html de la aplicacion
+sass: Los ficheros .scss que posteriormente se transpilarán.
+
+
+Dentro de la carpeta dist se genera todo: 
+El bundle.js, el style.css y el index.html (Este le he puesto directamente aquí)
+
+El style.css que se genera dntro de dist contiene todo el css de los scss transpilados.
+Esto lo podemos cambiar si quieres y ponerlo en archivos separados, pero me ha parecido buena idea
+ya que genera un unicos fichero.
+
+Lo que te he comentado arriba ocurre porque en el style.scss de la carpeta sass importo el resto de scss:
+
+@import 'reset.scss';
+@import 'header.scss';
+@import 'home.scss';
+@import 'footer.scss'
+
+En el archivo de configuracion webpack.config.js he hecho algunos cambios.
+
+He puesto algo de estilo, pero está todo vacío. He aprovechado la estructura del de Babel Games.
+
+Echale un ojo, y me cuentas. Cualquier cosa que veas que se puede cambiar, comentamelo!
+

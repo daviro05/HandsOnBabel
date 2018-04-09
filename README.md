@@ -17,6 +17,8 @@ Descripción de los proyectos:
 
 * HS3: NodeTweet - Creación de una API para obtener tweets y usuarios.
 
+* HS4: API EveryWhere - Uso de las APis de Canva, Geolocation, Drag & Drop, Video. Uso de svg. Estilo en scss, empaquetado con webpack.
+
 
 # Arranque de los Proyectos
 
