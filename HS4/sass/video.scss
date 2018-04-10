@@ -1,0 +1,37 @@
+.reproductor{
+    width: 720px;
+    margin: 20px auto;
+    padding: 5px;
+    background: dodgerblue;
+    border-radius: 10px;
+}
+.botones{
+    float: left;
+    width: 99px;
+    height: 20px;
+    button{
+        background: none;
+        border:0px;
+    }
+}
+.barra{
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 16px;
+    padding: 2px;
+    background: #EEEEEE;
+    &::-webkit-progress-value {
+        background-color:purple;
+      }
+}
+.progreso{
+    position: absolute;
+    width: 0px;
+    height: 16px;
+    background: rgba(0,0,150,.2);
+}
+
+nav{
+    overflow:hidden;
+}
