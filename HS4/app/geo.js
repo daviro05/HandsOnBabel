@@ -51,5 +51,5 @@ function mapaLoc() {
 }
 
 (function() {
-    window.addEventListener("load", () => { mapaFijo(); mapaLoc();})
+    window.addEventListener("load", () => { mapaLoc();})
 })()
