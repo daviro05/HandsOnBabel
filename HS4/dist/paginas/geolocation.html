@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9SwJ2RDakbCP1wXwx2B0w-sjGc8kPxTw"></script>
     <script src="../bundle.js" type="module"></script>
     <title>AEW - Home</title>
 </head>
@@ -19,30 +20,54 @@
     <nav class="menuPC">
         <ul>
             <li>
-                <a  href="../index.html">Home</a>
+                <a href="../index.html">Home</a>
             </li>
             <li>
-                <a  href="./canva.html">Canvas</a>
+                <a href="./canva.html">Canvas</a>
             </li>
             <li>
-                <a  href="./geolocation.html">Geolocation</a>
+                <a href="./geolocation.html">Geolocation</a>
             </li>
             <li>
-                <a  href="./video.html">Video</a>
+                <a href="./video.html">Video</a>
             </li>
             <li>
-                <a  href="./about.html">About</a>
+                <a href="./about.html">About</a>
             </li>
         </ul>
     </nav>
     <nav class="menuMob">
-        <span id="menuBtn" class="mobile_ham"><img src="../assets/hamburger.png"></span>
+        <span id="menuBtn" class="mobile_ham">
+            <img src="../assets/hamburger.png">
+        </span>
+        <ul>
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="./canva.html">Canvas</a>
+            </li>
+            <li>
+                <a href="./geolocation.html">Geolocation</a>
+            </li>
+            <li>
+                <a href="./video.html">Video</a>
+            </li>
+            <li>
+                <a href="./about.html">About</a>
+            </li>
+        </ul>
 
     </nav>
-    
+
     <!-- Contenido principal -->
     <main>
 
+        <div class="mapas">
+            <h1>Mapa del punto en el que te encuentras</h1>
+            <div id="otroMapa" class="map"></div>
+            <div id="miMapa" class="map"></div>
+        </div>
     </main>
     <footer>
         <address>

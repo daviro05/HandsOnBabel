@@ -46,6 +46,16 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
 
+.map {
+  width: 500px;
+  height: 380px;
+  margin-left: 1em;
+  float: left; }
+
+.mapas {
+  overflow: hidden;
+  margin: auto; }
+
 h1 {
   font-family: 'Indie Flower', cursive;
   color: black;
@@ -53,60 +63,125 @@ h1 {
   text-align: center;
   margin: 2%; }
 
-body {
+.secciones {
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 50%;
+  border: 3px solid black;
+  min-height: 200px;
+  margin-left: 25%;
+  margin-top: 1rem; }
+
+.seccionC article {
   text-align: center; }
 
-nav {
-  width: 100%; }
-  nav ul {
-    display: flex;
-    justify-content: center; }
-    nav ul li {
-      background-color: black; }
-      nav ul li :not(:last-of-type) {
-        margin-right: 1rem; }
-      nav ul li a {
-        color: white;
-        display: block;
-        padding: 1rem 2rem;
-        text-decoration: none; }
+.seccionC figure {
+  text-align: center; }
+  .seccionC figure .index_img {
+    width: 50%;
+    transition: all 0.3s linear; }
+    .seccionC figure .index_img:hover {
+      opacity: 0.01; }
+
+footer {
+  text-align: center;
+  background-color: black;
+  bottom: 0;
+  color: white;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 2rem; }
+
+.seccionC .imgPC img {
+  float: left;
+  width: 50%;
+  transition: all 0.3s linear; }
+  .seccionC .imgPC img:hover {
+    opacity: 0.01; }
+
+article p {
+  margin: auto;
+  margin-top: 1rem;
+  line-height: 2;
+  position: absolute;
+  width: 25%; }
+
+.sec_about {
+  margin: auto;
+  width: 50%;
+  border: 3px solid black;
+  min-height: 29rem;
+  margin-left: 25%;
+  margin-top: 1rem; }
+
+.text_about .desc_der {
+  margin-left: 25%;
+  z-index: -1; }
+
+.text_about .desc_izq {
+  z-index: -1; }
 
 @media screen and (min-width: 800px) {
   .menuMob {
     display: none; }
   main {
     width: 100%; }
-  .seccionC {
-    max-height: 210px; }
-  section {
-    width: 50%;
-    margin: auto;
-    background-color: white;
-    margin-bottom: 1%;
-    margin-top: 1rem;
-    border-radius: 10px; }
-  .imgPC img {
-    width: 150px;
-    height: 150px;
-    border: 1px solid black;
-    border-radius: 100px; }
-  figure.imgPC {
-    float: left;
-    width: 25%; }
-  article p {
-    float: left;
-    width: 70%;
-    margin-left: 1rem;
-    margin-bottom: 1rem; }
-  .secciones {
-    margin: auto;
-    width: 50%;
-    min-height: 220px;
-    position: absolute;
-    margin-left: 25%; }
-  .sec_personajes {
-    display: flex;
-    border: 1px solid black;
-    border-radius: 10px; }
-  .sec_personajes img {
-    width: 50%; } }
+  nav {
+    width: 100%; }
+    nav ul {
+      display: flex;
+      justify-content: center; }
+      nav ul li {
+        background-color: black; }
+        nav ul li:not(:last-of-type) {
+          margin-right: 1rem; }
+        nav ul li a {
+          color: white;
+          display: block;
+          padding: 1rem 2rem;
+          text-decoration: none; } }
+
+@media screen and (max-width: 800px) {
+  .menuPC {
+    display: none; }
+  img {
+    width: 200px; }
+  figcaption {
+    font-weight: bold; }
+  article {
+    background-color: white; }
+  .mobile_ham img {
+    width: 20px;
+    justify-content: center;
+    margin: 0; }
+  nav {
+    width: 100%; }
+    nav > span {
+      margin-left: 1rem;
+      color: white;
+      padding: 0.5rem;
+      border: 2px solid white; }
+    nav ul {
+      display: none;
+      justify-content: center;
+      z-index: 1000;
+      box-shadow: 5px 10px rgba(0, 0, 0, 0.2);
+      width: 50%;
+      margin-top: 1rem;
+      float: left;
+      position: absolute; }
+      nav ul li {
+        background-color: black;
+        width: 100%; }
+        nav ul li:not(:last-of-type) {
+          margin-right: 1rem; }
+        nav ul li a {
+          color: white;
+          display: block;
+          padding: 1rem 2rem;
+          text-decoration: none; } }
+
+body {
+  background-color: peachpuff; }

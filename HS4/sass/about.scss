@@ -1,0 +1,42 @@
+
+    .seccionC{
+        .imgPC{
+            img{
+                float: left;
+                width: 50%;
+                transition:all 0.3s linear;
+                &:hover{
+                    opacity: 0.01;
+                }
+            }
+        }
+    } 
+
+    article{
+        p{
+            margin:auto;
+            margin-top: 1rem;
+            line-height: 2;
+            position: absolute;
+            width: 25%;
+        }
+    } 
+
+    .sec_about{
+        margin: auto;
+        width: 50%;
+        border:3px solid black;
+        min-height: 29rem;
+        margin-left: 25%;
+        margin-top: 1rem;
+    }
+
+    .text_about{
+        .desc_der{
+            margin-left: 25%;
+            z-index: -1;
+        }
+        .desc_izq{
+            z-index: -1;
+        }
+    }

@@ -1,4 +1,13 @@
 @import 'reset.scss';
+@import 'geo.scss';
 @import 'header.scss';
 @import 'home.scss';
-@import 'footer.scss'
+@import 'footer.scss';
+@import 'about.scss';
+@import 'stylePC.scss';
+@import 'styleMOV.scss';
+
+body{
+
+    background-color: peachpuff;
+}

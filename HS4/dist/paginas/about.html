@@ -7,134 +7,96 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
-    <script src="../bundle.js" type="module"></script> 
+    <script src="../bundle.js" type="module"></script>
 
-    <title>DCGames - About</title>
+    <title>AEW - About</title>
 </head>
 
 <body>
     <header>
-        <h1>
-            <i class="fa fa-gamepad"></i>Babel Games</h1>
+        <h1>API EveryWhere</h1>
     </header>
     <!--  Menu principal -->
     <nav class="menuPC">
         <ul>
             <li>
-                <a  href="../index.html">Home</a>
+                <a href="../index.html">Home</a>
             </li>
             <li>
-                <a  href="./trivial.html">Trivial</a>
+                <a href="./canva.html">Canvas</a>
             </li>
             <li>
-                <a  href="./caras.html">Personajes</a>
+                <a href="./geolocation.html">Geolocation</a>
             </li>
             <li>
-                <a  href="./parejas.html">Parejas</a>
+                <a href="./video.html">Video</a>
             </li>
             <li>
-                <a  href="./about.html">About</a>
+                <a href="./about.html">About</a>
             </li>
         </ul>
     </nav>
     <nav class="menuMob">
-        <span id="menuBtn" class="fa fa-bars"></span>
-        <ul>
-            <li>
-                <a  href="./index.html">Home</a>
-            </li>
-            <li>
-                <a  href="./paginas/trivial.html">Trivial</a>
-            </li>
-            <li>
-                <a  href="./paginas/caras.html">Personajes</a>
-            </li>
-            <li>
-                <a href="./paginas/parejas.html">Parejas</a>
-            </li>
-            <li>
-                <a  href="./about.html">About</a>
-            </li>
-        </ul>
-    </nav>
+            <span id="menuBtn" class="mobile_ham">
+                <img src="../assets/hamburger.png">
+            </span>
+            <ul>
+                <li>
+                    <a href="../index.html">Home</a>
+                </li>
+                <li>
+                    <a href="./canva.html">Canvas</a>
+                </li>
+                <li>
+                    <a href="./geolocation.html">Geolocation</a>
+                </li>
+                <li>
+                    <a href="./video.html">Video</a>
+                </li>
+                <li>
+                    <a href="./about.html">About</a>
+                </li>
+            </ul>
+    
+        </nav>
     <!-- Contenido principal -->
     <main>
-        <div><audio id="sonidofondo" src="./assets/sonido.mp3" preload="auto" loop></audio></div>
         <!-- Adivinar personajes -->
-        <div class="secciones"></div>
-        <section class="seccionC">
-            <article>
-                <figure class="imgPC">
-                    <img src="./assets/des1.jpg">
-                    <figcaption>Carlos López</figcaption>
-                </figure>
-                <p class="desc">
-                    Vivió durante 6 años en México en la ciudad de "La Chingada" desarrollando día y noche
-                    la página web de "Madelman" el muñeco de acción. Aunque puso todo su esfuerzo en ello
-                    no pudo evitar que la empresa quebrará. Ahora en su tiempo libre se dedica a la pesca y 
-                    colecciona sellos de personajes famosos. Podrás encontrarle en Wallapop con el nombre de usuario:
-                    "el_sellitos95". Actualmente trabaja como becario en Babel Sistemas de Información. 
-                    Frase típica: "La Chingada me cambió la vida".
-                </p>
-            </article>
-        </section>
-        <div class="sonido">ON/OFF Sonido</div>
-        <div class="secciones"></div>
-        <section class="seccionC">
-            <article>
-                <figure class="imgPC">
-                    <img src="./assets/des2.jpg">
-                    <figcaption>David Rodríguez</figcaption>
-                </figure>
-                <p class="desc">
-                     Después de varios años viviendo en Honolulu, David decidió apartarse del sol, el surf
-                     y los chiringuitos de playa. Después de estar varios meses desarrollando una aplicación
-                     para lograr hablar con las medusas, decidió apartar ese proyecto para mejorar en nuevas tecnologías
-                     en Babel Sistemas de Información. Ahora quiere ampliar su proyecto para conseguir comunicarse
-                     con cualquier criatura marina. En su tiempo libre le gusta ver documentales indios. En versión original.
-                     Frase típica: "Si hablaras con las medusas entenderías porque te pican..."
-                </p>
-            </article>
-        </section>
-        <section>
-            <button id="btnSug" class="btnSug" type="button"><span class="fa fa-arrow-down"></span>Sugerencias<span class="fa fa-arrow-down"></span></button>
-        </section>
-        <div id="formSugC" class="formSugC">
-            <form id="formSug" method="POST" novalidate>
-                <p id="error" class="error">Nombre y correo obligatorios</p>
-                <p>
-                    <label>Nombre
-                        <input id="nombre" name="nombre" type="text" required>
-                    </label>
-                </p>
-                <p>
-                    <label>Correo
-                        <input id="correo" name="correo" type="email" required>
-                    </label>
-                </p>
-                <p>¿Qué juego te ha gustado más?</p>
-                <ul>
-                    <li>
-                        <label>Caras
-                            <input type="checkbox" name="caras" id="caras">
-                        </label>
-                    </li>
-                    <li>
-                        <label>Trivial
-                            <input type="checkbox" name="trivial" id="trivial">
-                        </label>
-                    </li>
-                    <li>
-                        <label>Parejas
-                            <input type="checkbox" name="parejas" id="parejas">
-                        </label>
-                    </li>
-                </ul>
-                <p>Sugerencia</p>
-                <textarea name="sugerencia" id="sugerencia" class="iSug"></textarea>
-                <button class="btnForm" type="submit">Enviar</button>
-                <button class="btnForm" type="reset">Limpiar</button>
-            </form>
+        <div class="sec_about">
+            <section class="seccionC">
+                <article>
+                    <figure class="imgPC">
+                        <img src="../assets/des1.jpg">
+                    </figure>
+                    <div class="text_about">
+                    <p class="desc_izq">
+                        Vivió durante 6 años en México en la ciudad de "La Chingada" desarrollando día y noche la página web de "Madelman" el muñeco
+                        de acción. Aunque puso todo su esfuerzo en ello no pudo evitar que la empresa quebrará. Ahora en
+                        su tiempo libre se dedica a la pesca y colecciona sellos de personajes famosos. Podrás encontrarle
+                        en Wallapop con el nombre de usuario: "el_sellitos95". Actualmente trabaja como becario en Babel
+                        Sistemas de Información. Frase típica: "La Chingada me cambió la vida".
+                    </p>
+                    </div>
+                </article>
+            </section>
+
+            <section class="seccionC">
+                    <article>
+                        <figure class="imgPC">
+                            <img src="../assets/des2.jpg">
+                        </figure>
+                        <div class="text_about">
+                        <p class="desc_der">
+                            Después de varios años viviendo en Honolulu, David decidió apartarse del sol, el surf y los chiringuitos de playa. Después
+                            de estar varios meses desarrollando una aplicación para lograr hablar con las medusas, decidió apartar
+                            ese proyecto para mejorar en nuevas tecnologías en Babel Sistemas de Información. Ahora quiere ampliar
+                            su proyecto para conseguir comunicarse con cualquier criatura marina. En su tiempo libre le gusta
+                            ver documentales indios. En versión original. Frase típica: "Si hablaras con las medusas entenderías
+                            porque te pican..."
+                        </p>
+                    </div>
+                    </article>
+                </section>
         </div>
     </main>
     <footer>

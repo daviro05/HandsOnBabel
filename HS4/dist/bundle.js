@@ -79,7 +79,30 @@
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ \"./sass/style.scss\");\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\n//# sourceURL=webpack:///./app/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/style.scss */ \"./sass/style.scss\");\n/* harmony import */ var _sass_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _main_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.js */ \"./app/main.js\");\n/* harmony import */ var _geo_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./geo.js */ \"./app/geo.js\");\n/* harmony import */ var _geo_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_geo_js__WEBPACK_IMPORTED_MODULE_2__);\n\r\n\r\n\r\n\r\n(function () {\r\n    document.addEventListener(\"DOMContentLoaded\", () => new _main_js__WEBPACK_IMPORTED_MODULE_1__[\"Main\"](), false)\r\n})()\n\n//# sourceURL=webpack:///./app/app.js?");
+
+/***/ }),
+
+/***/ "./app/geo.js":
+/*!********************!*\
+  !*** ./app/geo.js ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("function mapaFijo() {\r\n\r\n    // mapa sin geolocalización:\r\n    // ejemplo básico del uso del API de google.maps\r\n\r\n    var domMapa = document.getElementById(\"otroMapa\");\r\n    var latitude = 40;\r\n    var longitude = -6;\r\n    var options = {\r\n        position: new google.maps.LatLng(latitude, longitude),\r\n        title: \"Tu localización\",\r\n        zoom: 5,\r\n        mapTypeId: google.maps.MapTypeId.ROADMAP\r\n    };\r\n    var map = new google.maps.Map(domMapa, options);\r\n    map.setCenter(new google.maps.LatLng(latitude, longitude));\r\n\r\n}\r\n\r\n\r\nfunction mapaLoc() {\r\n\r\n    // mapa con geolocalización\r\n    // ejemplo básico del uso del nuevo API de HTML5\r\n\r\n    if (navigator.geolocation) {\r\n        navigator.geolocation.getCurrentPosition(function (pos) {\r\n            var domMapa = document.getElementById(\"miMapa\");\r\n            var latitude = pos.coords.latitude;\r\n            var longitude = pos.coords.longitude;\r\n            var options = {\r\n                position: new google.maps.LatLng(latitude, longitude),\r\n                title: \"Tu localización\",\r\n                zoom: 19,\r\n                mapTypeId:google.maps.MapTypeId.ROADMAP\r\n            }; // fin de options\r\n            var map = new google.maps.Map(domMapa, options);\r\n            var marker = new google.maps.Marker(options);\r\n            var circle = new google.maps.Circle({\r\n                map: map, radius: pos.coords.accuracy\r\n            }); // fin de circle\r\n            circle.bindTo('center', marker, 'position');\r\n            marker.setMap(map);\r\n            map.setCenter(new google.maps.LatLng(latitude, longitude));\r\n        },\r\n        function (error) {\r\n            console.log(error.message);\r\n        },\r\n        {enableHighAccuracy : true}); // fin de getCurrentPosition\r\n    }\r\n}\r\n\r\n(function() {\r\n    window.addEventListener(\"load\", () => { mapaFijo(); mapaLoc();})\r\n})()\r\n\n\n//# sourceURL=webpack:///./app/geo.js?");
+
+/***/ }),
+
+/***/ "./app/main.js":
+/*!*********************!*\
+  !*** ./app/main.js ***!
+  \*********************/
+/*! exports provided: Main */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Main\", function() { return Main; });\nclass Main {\r\n    constructor() {\r\n        this.vista = {\r\n            eBtnMenuMob: document.querySelector('#menuBtn'),\r\n            eMenuMob: document.querySelector('.menuMob ul'),\r\n        }\r\n        this.vista.eBtnMenuMob.addEventListener('click', this.desplegarMenu.bind(this), false);\r\n    }\r\n\r\n    desplegarMenu() {\r\n        if (!this.vista.eMenuMob.style.display || this.vista.eMenuMob.style.display === 'none') {\r\n            this.vista.eMenuMob.style.display = 'list-item';\r\n        } else {\r\n            this.vista.eMenuMob.style.display = 'none';\r\n        }\r\n    }\r\n}\n\n//# sourceURL=webpack:///./app/main.js?");
 
 /***/ }),
 
