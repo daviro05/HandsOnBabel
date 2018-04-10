@@ -1,0 +1,12 @@
+
+
+APIS
+
+- Juego en canvas
+
+- Distancia a lugares importantes dada la ubicación actual.
+
+- Interfaz de vídeo personalizada.
+
+- Drag & Drop: Nombre del pais con su bandera.
+

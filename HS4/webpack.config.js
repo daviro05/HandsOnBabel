@@ -35,6 +35,6 @@ module.exports = {
         host: '127.0.0.1',
         port: 8080,
         inline: true,
-        contentBase: path.join(__dirname,'dist/app')
+        contentBase: path.join(__dirname,'dist')
     }
 };
