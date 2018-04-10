@@ -1,5 +1,48 @@
-svg{
-    -moz-perspective: 600px;
-    -webkit-perspective: 600px;
-    perspective: 600px;
+article {
+    overflow: hidden;
+    position: relative;
+    clear: both;
+    width: 80%;
+    margin: 1% auto;
+}
+
+div {
+    .mapa {
+        width: 80%;
+        float: left;
+        embed {
+            width: 100%;
+            height: 100%;
+        }
+
+        
+    }
+    #bandera {
+        position: absolute;
+        width: 150px;
+        height: 100px;
+        bottom: 0%;
+        right: 10%;
+    }
+}
+
+text{
+    display: none;
+}
+
+p {
+    .info {
+        position: absolute;
+        width: 50%;
+        bottom: 0%;
+        right: 10%;
+        text-align: right;
+        margin-left: 20%;
+        background-color: beige;
+    }
+}
+
+img {
+    width: 100%;
+    height: 100%;
 }

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../style.css">
-    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
         crossorigin="anonymous"></script>
     <script src="../bundle.js" type="module"></script>
@@ -23,6 +23,7 @@
             let elem = document.querySelector('#medio');
             let btnFS = document.querySelector('#fullScreen');
             btnFS.addEventListener('click', fullScreen);
+            var bucle;
 
             function fullScreen() {
                 if (elem.requestFullscreen) {
@@ -52,7 +53,7 @@
                     oMedio.play();
                     oReproducir.children[0].classList.remove('fa-play');
                     oReproducir.children[0].classList.add('fa-pause');
-                    var bucle = window.setInterval(estado, 1000);
+                    bucle = window.setInterval(estado, 1000);
                     // cada segundo ejecuto la función estado, que pintará la barra de estado
                     // bucle corresponde al identificator del setInterval
                 }
@@ -82,7 +83,8 @@
                 } else {
                     oBarra.value = 0;
                     // actualizo el aspecto de la barra
-                    oReproducir.value = 'Reproducir';
+                    oReproducir.children[0].classList.remove('fa-pause');
+                    oReproducir.children[0].classList.add('fa-play');
                     // actualizo el aspecto del boton
                     window.clearInterval(bucle);
                     // termino con la ejecución repetida de la función
@@ -128,20 +130,44 @@
         <span id="menuBtn" class="mobile_ham">
             <img src="../assets/hamburger.png">
         </span>
-
+        <ul>
+            <li>
+                <a href="../index.html">Home</a>
+            </li>
+            <li>
+                <a href="./canva.html">Canvas</a>
+            </li>
+            <li>
+                <a href="./geolocation.html">Geolocation</a>
+            </li>
+            <li>
+                <a href="./video.html">Video</a>
+            </li>
+            <li>
+                <a href="./svg.html">SVG + DragAndDrop</a>
+            </li>
+            <li>
+                <a href="./about.html">About</a>
+            </li>
+        </ul>
     </nav>
 
     <!-- Contenido principal -->
     <main>
         <section id="reproductor" class="reproductor">
-            <video id="medio" width="100%" height="400">
+            <video id="medio" width="100%" height="400" class="medio">
                 <source src="../assets/Shadowrun.webm" type="video/webm"> </source>
                 <source src="../assets/Shadowrun.mp4" type="video/mp4"> </source>
             </video>
+            <div class="marco"></div>
             <nav>
                 <div id="botones" class="botones">
-                    <button type="button" id="reproducir"><span class="fa fa-play"></span></button>
-                    <button type="button" id="fullScreen"><span class="fa fa-expand"></span></button>
+                    <button type="button" id="reproducir">
+                        <span class="fa fa-play"></span>
+                    </button>
+                    <button type="button" id="fullScreen">
+                        <span class="fa fa-expand"></span>
+                    </button>
                 </div>
                 <progress id="barra" max="600" class="barra"></progress>
             </nav>

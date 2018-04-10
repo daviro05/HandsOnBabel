@@ -3,35 +3,60 @@
     margin: 20px auto;
     padding: 5px;
     background: dodgerblue;
-    border-radius: 10px;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 5px 14px black;;
+    
 }
 .botones{
     float: left;
     width: 99px;
     height: 20px;
+    margin-left:0.1rem;
     button{
         background: none;
         border:0px;
+        color:white;
+        transition: all .2s ease-in-out;
+        &:hover{
+            color:midnightblue;
+            transform: scale(1.2);
+        }
     }
 }
+
+
+
 .barra{
     position: relative;
     float: left;
     width: 600px;
-    height: 16px;
     padding: 2px;
     background: #EEEEEE;
     &::-webkit-progress-value {
-        background-color:purple;
-      }
+        background: linear-gradient(to bottom right, red, yellow);
+    }
+    &::-webkit-progress-bar {
+        background-color: white;
+    }
 }
 .progreso{
     position: absolute;
     width: 0px;
-    height: 16px;
     background: rgba(0,0,150,.2);
 }
 
 nav{
     overflow:hidden;
+}
+
+.medio{
+    position: relative;
+}
+
+.marco{
+    width: 711px;
+    height: 403px;
+    border:15px solid rgba(92, 126, 204, 0.46);
+    position: absolute;
+    top:203px;
 }
