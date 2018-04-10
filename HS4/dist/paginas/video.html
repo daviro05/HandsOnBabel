@@ -7,8 +7,94 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
     <script src="../bundle.js" type="module"></script>
     <title>AEW - Home</title>
+
+    <script>
+        function main() {
+            const maximo = 600; // ancho total en px de la barra de progreso, definido en css 
+            let oMedio = document.querySelector('#medio'); //objeto video; JQuery no soporta <vidoe> pero almacena los datos del nodo DOM como elelmento [0] del array que crea
+            let oReproducir = document.querySelector('#reproducir'); //objeto boton reproducir
+            let oBarra = document.querySelector('#barra'); // objeto barra de progreso
+            //var oProgreso = document.querySelector('#progreso'); // objeto "progreso": el interior coloreado de la barra de progreso
+
+            let elem = document.querySelector('#medio');
+            let btnFS = document.querySelector('#fullScreen');
+            btnFS.addEventListener('click', fullScreen);
+
+            function fullScreen() {
+                if (elem.requestFullscreen) {
+                    elem.requestFullscreen()
+                } else if (elem.msRequestFullScreen) {
+                    elem.msRequestFullscreen()
+                } else if (elem.mozRequestFullScreen) {
+                    elem.mozRequestFullScreen()
+                } else if (elem.webkitRequestFullscreen) {
+                    elem.webkitRequestFullscreen()
+                }
+            }
+
+            oReproducir.addEventListener('click', clicReproducir)
+            oBarra.addEventListener('click', clicBarra)
+
+            function clicReproducir() {
+
+                if (!oMedio.paused && !oMedio.ended) {
+                    //paramos el vídeo
+                    oMedio.pause();
+                    oReproducir.children[0].classList.remove('fa-pause');
+                    oReproducir.children[0].classList.add('fa-play');
+                    window.clearInterval(bucle);
+                } else {
+                    //reproducimos el video
+                    oMedio.play();
+                    oReproducir.children[0].classList.remove('fa-play');
+                    oReproducir.children[0].classList.add('fa-pause');
+                    var bucle = window.setInterval(estado, 1000);
+                    // cada segundo ejecuto la función estado, que pintará la barra de estado
+                    // bucle corresponde al identificator del setInterval
+                }
+            }; // fin de la funcion clicReproducir, manejadora de click en el boton
+
+            function clicBarra(e) {
+                if (!oMedio.paused && !oMedio.ended) {
+                    //si el video se esta reproduciendo
+                    var ratonX = e.pageX - oBarra.offsetLeft;
+                    // valor en x de la barra: x(raton) - x(inicio barra) 
+                    var nuevoTiempo = ratonX * oMedio.duration / maximo;
+                    // valor x en segundos  x * t / x(maximo)
+                    oMedio.currentTime = nuevoTiempo;
+                    // cambio de tiempo del video
+                    oBarra.value = ratonX;
+                    // cambio de aspecto de la barra
+                }
+            }; // fin de la funcion clicBarra, manejadora de click en la barra
+
+            function estado() {
+                if (!oMedio.ended) {
+                    // si continua la reproducción
+                    var total = parseInt(oMedio.currentTime * maximo / oMedio.duration);
+                    //paso el curretTime a pixels
+                    oBarra.value = total;
+                    // actualizo el aspecto de la barra
+                } else {
+                    oBarra.value = 0;
+                    // actualizo el aspecto de la barra
+                    oReproducir.value = 'Reproducir';
+                    // actualizo el aspecto del boton
+                    window.clearInterval(bucle);
+                    // termino con la ejecución repetida de la función
+                };
+            }; // Fin de la función estado()
+
+        }; // fin de la funcion main()
+
+
+
+        window.addEventListener("load", main, false);
+    </script>
 </head>
 
 <body>
@@ -19,49 +105,47 @@
     <nav class="menuPC">
         <ul>
             <li>
-                <a  href="../index.html">Home</a>
+                <a href="../index.html">Home</a>
             </li>
             <li>
-                <a  href="./canva.html">Canvas</a>
+                <a href="./canva.html">Canvas</a>
             </li>
             <li>
-                <a  href="./geolocation.html">Geolocation</a>
+                <a href="./geolocation.html">Geolocation</a>
             </li>
             <li>
-                <a  href="./video.html">Video</a>
+                <a href="./video.html">Video</a>
             </li>
             <li>
-                <a  href="./about.html">About</a>
+                <a href="./svg.html">SVG + DragAndDrop</a>
+            </li>
+            <li>
+                <a href="./about.html">About</a>
             </li>
         </ul>
     </nav>
     <nav class="menuMob">
-            <span id="menuBtn" class="mobile_ham">
-                <img src="../assets/hamburger.png">
-            </span>
-            <ul>
-                <li>
-                    <a href="../index.html">Home</a>
-                </li>
-                <li>
-                    <a href="./canva.html">Canvas</a>
-                </li>
-                <li>
-                    <a href="./geolocation.html">Geolocation</a>
-                </li>
-                <li>
-                    <a href="./video.html">Video</a>
-                </li>
-                <li>
-                    <a href="./about.html">About</a>
-                </li>
-            </ul>
-    
-        </nav>
-    
+        <span id="menuBtn" class="mobile_ham">
+            <img src="../assets/hamburger.png">
+        </span>
+
+    </nav>
+
     <!-- Contenido principal -->
     <main>
-
+        <section id="reproductor" class="reproductor">
+            <video id="medio" width="100%" height="400">
+                <source src="../assets/Shadowrun.webm" type="video/webm"> </source>
+                <source src="../assets/Shadowrun.mp4" type="video/mp4"> </source>
+            </video>
+            <nav>
+                <div id="botones" class="botones">
+                    <button type="button" id="reproducir"><span class="fa fa-play"></span></button>
+                    <button type="button" id="fullScreen"><span class="fa fa-expand"></span></button>
+                </div>
+                <progress id="barra" max="600" class="barra"></progress>
+            </nav>
+        </section>
     </main>
     <footer>
         <address>
