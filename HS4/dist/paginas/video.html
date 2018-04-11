@@ -82,7 +82,8 @@
                 } else {
                     oBarra.value = 0;
                     // actualizo el aspecto de la barra
-                    oReproducir.value = 'Reproducir';
+                    oReproducir.children[0].classList.remove('fa-pause');
+                    oReproducir.children[0].classList.add('fa-play');
                     // actualizo el aspecto del boton
                     window.clearInterval(bucle);
                     // termino con la ejecución repetida de la función
@@ -138,6 +139,7 @@
                 <source src="../assets/Shadowrun.webm" type="video/webm"> </source>
                 <source src="../assets/Shadowrun.mp4" type="video/mp4"> </source>
             </video>
+            <div class="marco"></div>
             <nav>
                 <div id="botones" class="botones">
                     <button type="button" id="reproducir"><span class="fa fa-play"></span></button>
