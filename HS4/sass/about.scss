@@ -5,6 +5,7 @@
                 float: left;
                 width: 50%;
                 transition:all 0.3s linear;
+                border:2px solid black;
                 &:hover{
                     opacity: 0.01;
                 }
@@ -25,7 +26,7 @@
     .sec_about{
         margin: auto;
         width: 50%;
-        border:3px solid black;
+        //border:3px solid black;
         min-height: 29rem;
         margin-left: 25%;
         margin-top: 1rem;
