@@ -47,17 +47,17 @@
                     let sitesA = Array.prototype.slice.call(this.aRegiones_path);
                     let sitesB = Array.prototype.slice.call(this.aRegiones_poli);
                     this.aSitios = sitesA.concat(sitesB);
-                    let num,elec,id;
-                    do{
+                    let num, elec, id;
+                    do {
                         num = Math.round(Math.random() * (this.aSitios.length - 1));
                         elec = this.aSitios[num];
                         id = elec.id;
-                    }while(id == 'Asturias_0' || id == 'Asturias_1');
-                    
+                    } while (id == 'Asturias_0' || id == 'Asturias_1');
+
                     this.labelDestiny.innerHTML = id;
                     elec.style.fill = 'red';
                 },
-                repaint: function() {
+                repaint: function () {
                     for (var i = 0; i < this.aRegiones_path.length; i++) {
                         this.aRegiones_path[i].style.fill = this.aColors_path[i];
                     } // recorremos el array de nodos correspondientes a cada region
@@ -115,7 +115,10 @@
                 <a href="./geolocation.html">Geolocation</a>
             </li>
             <li>
-                <a href="./svg.html">SVG + DragAndDrop</a>
+                <a href="./svg.html">SVG</a>
+            </li>
+            <li>
+                <a href="./dragdrop.html">DRAG & DROP</a>
             </li>
             <li>
                 <a href="./video.html">Video</a>
@@ -140,7 +143,10 @@
                 <a href="./geolocation.html">Geolocation</a>
             </li>
             <li>
-                <a href="./svg.html">SVG + DragAndDrop</a>
+                <a href="./svg.html">SVG</a>
+            </li>
+            <li>
+                <a href="./dragdrop.html">DRAG & DROP</a>
             </li>
             <li>
                 <a href="./video.html">Video</a>
@@ -161,7 +167,7 @@
             </div>
             <p id="info_2" class="info"></p>
         </article>
-        
+
         <div id="viaje" class="contViaje">
             <button id="btnViaje">¿Cuál será tu destino?</button>
             <p id="inputViaje" class="inputViaje"></p>

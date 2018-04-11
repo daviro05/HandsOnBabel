@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="../style.css">
     <link rel="shortcut icon" href="../favicon.png" type="image/x-icon">
-  <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9SwJ2RDakbCP1wXwx2B0w-sjGc8kPxTw"></script>
+    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC9SwJ2RDakbCP1wXwx2B0w-sjGc8kPxTw"></script>
     <script src="../bundle.js" type="module"></script>
     <title>AEW - Home</title>
 </head>
@@ -29,7 +29,10 @@
                 <a href="./geolocation.html">Geolocation</a>
             </li>
             <li>
-                <a href="./svg.html">SVG + DragAndDrop</a>
+                <a href="./svg.html">SVG</a>
+            </li>
+            <li>
+                <a href="./dragdrop.html">DRAG & DROP</a>
             </li>
             <li>
                 <a href="./video.html">Video</a>
@@ -54,6 +57,12 @@
                 <a href="./geolocation.html">Geolocation</a>
             </li>
             <li>
+                <a href="./svg.html">SVG</a>
+            </li>
+            <li>
+                <a href="./dragdrop.html">DRAG & DROP</a>
+            </li>
+            <li>
                 <a href="./video.html">Video</a>
             </li>
             <li>
@@ -65,7 +74,7 @@
 
     <!-- Contenido principal -->
     <main>
-<!-- 
+        <!-- 
         <div class="mapas">
             <h2>Encuentra tu ubicación</h2>
             <div id="miMapa" class="map"></div>
@@ -74,26 +83,31 @@
 
         <div class="container">
 
-                <table id = "tab">
-                    <tr>
-                        <th>Lugar</th><td></td>
-                    </tr>
-                    <tr>
-                        <th>Temperatura</th><td></td>
-                    </tr>
-                    <tr>
-                        <th>Humedad</th><td></td>
-                    </tr>
-                    <tr>
-                        <th>Viento</th><td></td>
-                    </tr>
-                    <tr>
-                        <th>Presión</th><td></td>
-                    </tr>
-                </table>
-            
-                <div id = "map"></div>
-            </div>
+            <table id="tab">
+                <tr>
+                    <th>Lugar</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Temperatura</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Humedad</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Viento</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Presión</th>
+                    <td></td>
+                </tr>
+            </table>
+
+            <div id="map"></div>
+        </div>
     </main>
     <footer>
         <address>

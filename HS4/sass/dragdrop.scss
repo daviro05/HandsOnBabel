@@ -1,0 +1,82 @@
+  
+  #title {
+    font-size:20px;
+  }
+  
+  #rest2 {
+    font-size:13px;
+  }
+  
+  #text{
+    width:320px;
+    height:320px;
+    background:black;
+    border:5px solid black;
+    margin:auto;
+    margin-top: 10px;
+    div {
+        position:relative;
+        height: 100px;
+        width: 100px;
+        border: 1px dashed gray;
+        display: inline-block;
+        margin: 0;
+     } 
+  }
+
+  #images {
+    text-align: center;
+    margin-top: 10px;
+    width: 100%
+  }
+  
+  #drag4,
+  #drag5,
+  #drag6,
+  #drag7,
+  #drag8,
+  #drag9,
+  #drag10,
+  #drag11,
+  #drag12 {
+    height: 100px;
+    width: 100px;
+    
+    display: inline-block;
+  }
+  
+  #drag4 {
+    background: linear-gradient(to bottom right, orange, orange, yellow);
+  }
+  
+  #drag5 {
+    background: linear-gradient(to right, red, orange);
+  }
+  
+  #drag6 {
+    background: linear-gradient(red, orange);
+  }
+  
+  #drag7 {
+    background: linear-gradient(to bottom right, red, red, orange);
+  }
+  
+  #drag8 {
+    background:yellow;
+  }
+  
+  #drag9 {
+    background: linear-gradient(orange, yellow);
+  }
+  
+  #drag10 {
+    background: linear-gradient(to right, orange, yellow);
+  }
+  
+  #drag11 {
+    background: linear-gradient(red, orange);
+  }
+  
+  #drag12 {
+    background: linear-gradient(to right, red,orange);
+  }
