@@ -13,50 +13,82 @@
     <script>
         // Acceso al DOM de una imagen SVG vinculada a un documento HTML 
         // Es importante tener en cuenta las indicaciones relativas a la carga de la página
+        let anthems = {
+            'Murcia': '',
+        }
+
         function main() {
             var oMapa = {
                 oElementoSVG: {},
                 aRegiones_path: [],
                 aRegiones_poli: [],
+                aColors_path: [],
+                aColors_poli: [],
+                color: '',
                 aRegiones: [],
-                oNodoNombre: {},
-                oNodoBandera: {},
-                inRegion: function (oEvent) {
+                btnWheel: {},
+                aSitios: [],
+                labelDestiny: {},
+                getAnthem: function (oEvent) {
                     var region = oEvent.target.getAttribute("id");
-                    this.oNodoNombre.innerHTML = region;
-                    this.oNodoBandera.querySelector("img").src="../Banderas/" + region + ".gif";
+                    console.dir(oEvent.target);
                 },
-                outMapa: function () {
-                    this.oNodoNombre.innerHTML = ""
-                    this.oNodoBandera.querySelector("img").src = "";
+                onHover: function (oEvent) {
+                    var reg = oEvent.target;
+                    this.color = reg.style.fill;
+                    reg.style.fill = 'lightgreen';
+                },
+                onOut: function (oEvent) {
+                    var reg = oEvent.target;
+                    reg.style.fill = this.color;
+                },
+                elect: function () {
+                    this.repaint();
+                    let sitesA = Array.prototype.slice.call(this.aRegiones_path);
+                    let sitesB = Array.prototype.slice.call(this.aRegiones_poli);
+                    this.aSitios = sitesA.concat(sitesB);
+                    let num = Math.round(Math.random() * (this.aSitios.length - 1));
+                    let elec = this.aSitios[num];
+                    let id = elec.id;
+                    this.labelDestiny.innerHTML = id;
+                    elec.style.fill = 'red';
+                },
+                repaint: function() {
+                    for (var i = 0; i < this.aRegiones_path.length; i++) {
+                        this.aRegiones_path[i].style.fill = this.aColors_path[i];
+                    } // recorremos el array de nodos correspondientes a cada region
+                    for (var i = 0; i < this.aRegiones_poli.length; i++) {
+                        this.aRegiones_poli[i].style.fill = this.aColors_poli[i];
+                    }
                 },
                 paginaCargada: function () {
                     this.aRegiones = this.aRegiones_path.concat(this.aRegiones_poli);
                     this.oElementoSVG = document.querySelector('embed').getSVGDocument().documentElement;
+                    this.btnWheel = document.querySelector('#btnViaje');
+                    this.labelDestiny = document.querySelector('#inputViaje');
                     // en este caso no  valtdría 
-                    // this.oElementoSVG = document.querySelector('embed').contentDocument;
-                    //this.oElementoSVG.setAttribute("height", "658.04449px");
-                    //this.oElementoSVG.setAttribute("width", "923.32129px");
-                    //this.oElementoSVG.setAttribute("viewBox", "200 0 658.04449 923.32129");
-                    this.oNodoNombre = document.getElementById("info_2");
-                    this.oNodoBandera = document.getElementById("bandera");
                     this.aRegiones_path = this.oElementoSVG.querySelectorAll('path');
                     this.aRegiones_poli = this.oElementoSVG.querySelectorAll('polygon');
-                    //this.aRegiones = this.aRegiones_path.concat(this.aRegiones_poli);
+                    this.btnWheel.onclick = this.elect.bind(this);
                     // array de Nodos con todas los elementos: uno por cada region
                     // no valido para arrais de nodos
                     for (var i = 0; i < this.aRegiones_path.length; i++) {
-                        this.aRegiones_path[i].onmouseover = this.inRegion.bind(this)
+                        this.aColors_path[i] = this.aRegiones_path[i].style.fill;
+                        this.aRegiones_path[i].onclick = this.getAnthem.bind(this);
+                        this.aRegiones_path[i].onmouseover = this.onHover.bind(this);
+                        this.aRegiones_path[i].onmouseout = this.onOut.bind(this);
                     } // recorremos el array de nodos correspondientes a cada region
                     for (var i = 0; i < this.aRegiones_poli.length; i++) {
-                        this.aRegiones_poli[i].onmouseover = this.inRegion.bind(this)
+                        this.aColors_poli[i] = this.aRegiones_poli[i].style.fill;
+                        this.aRegiones_poli[i].onclick = this.getAnthem.bind(this);
+                        this.aRegiones_poli[i].onmouseover = this.onHover.bind(this);
+                        this.aRegiones_poli[i].onmouseout = this.onOut.bind(this);
                     } // recorremos el array de nodos correspondientes a cada region
-                    this.oElementoSVG.onmouseout = this.outMapa.bind(this)
                 } //Fin del método paginaCargada
             }; //Fin del objeto oSVG
             oMapa.paginaCargada()
         }
-        window.addEventListener("load",main,false);
+        window.addEventListener("load", main, false);
         //Es necesario esperar al evento window.onload 
         //No funciona si se espera a la carga del documento
     </script>
@@ -95,22 +127,22 @@
         </span>
         <ul>
             <li>
-                <a href="../index.html">Home</a>
+                <a href="./index.html">Home</a>
             </li>
             <li>
-                <a href="./canva.html">Canvas</a>
+                <a href="./paginas/canva.html">Canvas</a>
             </li>
             <li>
-                <a href="./geolocation.html">Geolocation</a>
+                <a href="./paginas/geolocation.html">Geolocation</a>
             </li>
             <li>
                 <a href="./svg.html">SVG + DragAndDrop</a>
             </li>
             <li>
-                <a href="./video.html">Video</a>
+                <a href="./paginas/video.html">Video</a>
             </li>
             <li>
-                <a href="./about.html">About</a>
+                <a href="./paginas/about.html">About</a>
             </li>
         </ul>
 
@@ -119,13 +151,18 @@
 
     <!-- Contenido principal -->
     <main>
-        <article class="svg_art">
+        <article>
             <div id="mapa_2" class="mapa">
                 <embed id="imagen" type="image/svg+xml" src="../assets/españa.svg"></embed>
             </div>
-            <p id="info_2" class="info"></p>            
+            <p id="info_2" class="info"></p>
         </article>
-        <div id="bandera"><img src="" alt="" /></div>
+        <button id="btnViaje">Cuál será tu destino?</button>
+        <div id="viaje">
+            <p>Tu próximo viaje será a :
+                <span id="inputViaje"></span>
+            </p>
+        </div>
     </main>
     <footer>
         <address>
