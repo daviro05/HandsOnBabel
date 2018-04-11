@@ -47,9 +47,13 @@
                     let sitesA = Array.prototype.slice.call(this.aRegiones_path);
                     let sitesB = Array.prototype.slice.call(this.aRegiones_poli);
                     this.aSitios = sitesA.concat(sitesB);
-                    let num = Math.round(Math.random() * (this.aSitios.length - 1));
-                    let elec = this.aSitios[num];
-                    let id = elec.id;
+                    let num,elec,id;
+                    do{
+                        num = Math.round(Math.random() * (this.aSitios.length - 1));
+                        elec = this.aSitios[num];
+                        id = elec.id;
+                    }while(id == 'Asturias_0' || id == 'Asturias_1');
+                    
                     this.labelDestiny.innerHTML = id;
                     elec.style.fill = 'red';
                 },
@@ -157,11 +161,10 @@
             </div>
             <p id="info_2" class="info"></p>
         </article>
-        <button id="btnViaje">Cuál será tu destino?</button>
-        <div id="viaje">
-            <p>Tu próximo viaje será a :
-                <span id="inputViaje"></span>
-            </p>
+        
+        <div id="viaje" class="contViaje">
+            <button id="btnViaje">¿Cuál será tu destino?</button>
+            <p id="inputViaje" class="inputViaje"></p>
         </div>
     </main>
     <footer>
