@@ -1,21 +1,53 @@
-.map {
-    width: 500px;
+#map{
     height: 400px;
-    margin-left: 1em;
-    margin: auto
+    width: 57%;
+    max-width : 700px;
+    margin: 0 auto;
+    width: 95%;
+    border-radius: 20px;
+    border: 5px solid #de7a22;
 }
 
-.mapas{
-    overflow: hidden;
-    margin: auto;
-    width: 40%;
+#data{
+    width: 100%;
+}
+td{
+    text-align: left;
+    font-size: 1.5rem;
+}
+table{
+    order: 2;
+    table-layout: fixed;
+    width: 95%;
+    border: 3px solid #de7a22;
+    border-radius: 20px;
+    margin: 10px auto;
+    max-width: 500px;
 }
 
-main{
-    text-align: center;
+th, td{
+    line-height: 1.5;
+    font-size: 1.5rem;
+    text-align: left;
+    padding-left: 15px;
 }
 
-.buscar{
-    margin-top: 2px;
-    text-align: center;
+td{
+    border-left: 5px solid #de7a22;
+}
+@media (min-width :790px) {
+    #map{
+        width: 60%;
+    }
+    #tab{
+        width: 38%;
+    }
+    .container{
+        margin: 0 auto;
+        display: flex;
+        padding: 40px;
+    }
+    table{
+        margin: 0 auto;
+    }
 }
